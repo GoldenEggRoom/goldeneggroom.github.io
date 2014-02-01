@@ -32,8 +32,7 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
         url: '/',
         views: {
             'detail@demo': {
-                templateUrl: 'app/views/detail/ideas.html',
-                controller: 'IdeasController'
+                templateUrl: 'app/views/detail/ideas.html'
             },
             'hero@demo.ideas':{
                 templateUrl: 'app/views/detail/ideas.hero.html',
