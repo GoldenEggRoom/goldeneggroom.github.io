@@ -19,9 +19,22 @@ angular.module('facebook')
   	// NB: this is a contrived example for demo purposes, you would never write the following code in a real app
 
  	// normally you would define a User.js data module for all your user objects and the method below would be on the user, e.g. $rootScope.currentUser.fbConnect() 
-
-  	ParseQueryAngular(Parse.FacebookUtils,{functionToCall:"logIn", params:[Parse.User.current(), "user_likes"]}).then(function(user) {
-  		alert('facebook connected!');
+  	ParseQueryAngular(Parse.FacebookUtils,{functionToCall:"logIn", params:[null, 
+		{
+			success: function(users) {
+				FB.api(
+					"/me",
+					function (response) {
+					  if (response && !response.error) {
+						/* handle the result */
+					  }
+					}
+				);
+			},error: function(err){
+				console.log(err);
+			}
+		}
+	]}).then(function(user) {
 
   		$scope.facebookCtrl.fbAuthData = user.get('authData');
 
@@ -35,28 +48,7 @@ angular.module('facebook')
 
   }
 
-  $scope.exampleCall = function() {
 
-  	FB.apiAngular(
-  		'/me/apprequests',
-  		{ message: 'From the app to the user.' },
-  		'POST')
-
-  	.then(function(data) {
-
-  		alert('FB Request Successfully Sent!');
-
-  		$scope.facebookCtrl.response = data;
-  	
-  	}, function(error) {
-
-  		alert('FB Request Unsuccessful!');
-
-		$scope.facebookCtrl.response = error;
-	
-	});
-
-  }
 
 
 }]);
