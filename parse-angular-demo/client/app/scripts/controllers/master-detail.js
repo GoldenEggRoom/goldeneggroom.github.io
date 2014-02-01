@@ -15,6 +15,13 @@ angular.module('demo')
     animate : "crossfade",
     collection: monsters,
     menu : [
+    {
+        title: "Welcome",
+        icon: "icon-home",
+        path: "#/ideas",
+        state: "demo.welcome"
+
+      },
       {
         title: "Ideas",
         icon: "icon-cloud",

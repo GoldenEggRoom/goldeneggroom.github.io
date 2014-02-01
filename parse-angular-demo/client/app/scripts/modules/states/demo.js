@@ -29,17 +29,17 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
         }
     })
     .state('demo.ideas', {
-    	url: '/',
-    	views: {
-    		'detail@demo' : {
-    			templateUrl: 'app/views/detail/ideas.list.html'
-    		}
-
-    	}
+        url: '/',
+        views: {
+            'detail@demo': {
+                templateUrl: 'app/views/detail/ideas.html',
+                controller: 'IdeasController'
+            }
+        }
     })
 
     .state('demo.ideas.detail', {
-    	url: 'crud/{monsterId}',
+    	url: 'ideas/{monsterId}',
     	views: {
     		
     		'detail@demo' : {
