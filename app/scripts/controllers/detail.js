@@ -1,6 +1,6 @@
 angular.module('demo')
 
-.controller('DetailController', ['$rootScope', '$scope', '$state', '$stateParams', 'MonsterService', function($rootScope, $scope, $state, $stateParams, MonsterService) {
+.controller('DetailController', ['$rootScope', '$scope', '$state', '$stateParams', 'IdeaService', function($rootScope, $scope, $state, $stateParams, IdeaService) {
   
   $scope.detailCtrl = {
     current : null
@@ -8,7 +8,7 @@ angular.module('demo')
 
   // inherit the collection from the parent controller and find the current model
   // $scope.fetchMonstersPromise.then(function(col) {
-    $scope.detailCtrl.current = $scope.masterDetailCtrl.collection.find(function(current) {
+    $scope.detailCtrl.current = $scope.ideasCtrl.collection.find(function(current) {
       return current.id == $stateParams.monsterId;
     })
   // })
