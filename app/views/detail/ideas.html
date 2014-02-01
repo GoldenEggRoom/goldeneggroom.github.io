@@ -41,7 +41,7 @@
 							<div class="small-left-margin machine">{{item.getTitle()}}</div>
 						</div>
 					</div>
-					<iframe width="560" height="315" src="{{item.getPitchVideoUrl()}}" frameborder="0" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="{{{{trustSrc(item.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
 					<div class="row-fluid">
 						<div class="span20-80 right-align">
 							<span class="machine bold">Details:</span>	
