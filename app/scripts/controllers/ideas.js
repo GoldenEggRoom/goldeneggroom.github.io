@@ -6,7 +6,11 @@ angular.module('demo')
     featuredIdea: ideas[0]
   };
 
-
+  $scope.goBackTo = function(state) {
+    
+    $state.transitionTo(state);
+    // $scope.masterDetailCtrl.animate = { enter: 'waveForward-enter', leave: 'waveForward-leave' };
+  }
 
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);

@@ -14,7 +14,6 @@
 					<span class="muted">Got an idea? Post an idea here!</span>
 				</div>	
 			</div>
-			
 		</div>
 		<div class="row-fluid white-back withShadow withRadius center-align">
 			<a href="#/ideas/{{item.id}}"
@@ -30,7 +29,9 @@
 							<div class="small-left-margin machine"><h3>{{item.getTitle()}}</h3></div>
 						</div>
 					</div>
-					<iframe width="560" height="315" ng-src="{{trustSrc(item.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+					<span ng-if="item.getPitchVideoUrl()">
+						<iframe width="560" height="315" ng-src="{{trustSrc(item.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+					</span>
 					<div class="row-fluid">
 						<div class="span20-80 right-align">
 							<span class="machine bold">Details:</span>	
