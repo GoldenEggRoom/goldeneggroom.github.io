@@ -22,6 +22,22 @@ angular.module('ExternalDataServices')
 			this.set('pitchVideoUrl', pitchVideoUrl);
 			return this;
 		},
+		setDevCommitment: function(devCommitment) {
+			this.set('devCommitment', devCommitment);
+			return this;
+		},
+		setDesignCommitment: function(designCommitment) {
+			this.set('designCommitment', designCommitment);
+			return this;
+		},
+		setEducatorCommitment: function(educatorCommitment) {
+			this.set('educatorCommitment', educatorCommitment);
+			return this;
+		},
+		setMonetaryCommitment: function(monetaryCommitment) {
+			this.set('monetaryCommitment', monetaryCommitment);
+			return this;
+		},
 		getOwner: function(owner) {
 			return this.get('owner');
 		},
@@ -33,6 +49,18 @@ angular.module('ExternalDataServices')
 		},
 		getPitchVideoUrl: function(pitchVideoUrl) {
 			return this.get('pitchVideoUrl');
+		},
+		getDevCommitment: function(devCommitment) {
+			return this.get('devCommitment');
+		},
+		getDesignCommitment: function(designCommitment) {
+			return this.get('designCommitment');
+		},
+		getEducatorCommitment: function(educatorCommitment) {
+			return this.get('educatorCommitment');
+		},
+		getMonetaryCommitment: function(monetaryCommitment) {
+			return this.get('monetaryCommitment');
 		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});

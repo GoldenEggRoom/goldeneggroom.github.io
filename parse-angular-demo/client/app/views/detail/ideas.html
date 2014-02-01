@@ -16,17 +16,7 @@
 			</div>
 			
 		</div>
-		<div class="row-fluid center-align">
-			<!--<div ui-view="hero" />-->
-			<div class="hero-unit">
-				<h1>This is an awesome idea</h1>
-				
-			</div>
-		</div>
 		<div class="row-fluid white-back withShadow withRadius center-align">
-			
-
-		
 			<a href="#/ideas/{{item.id}}"
 				class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top"
 				ng-repeat="item in ideasCtrl.collection.models"
@@ -35,18 +25,17 @@
 				<div class="span90-10 muted">
 					<div class="row-fluid tiny-bottom-margin">
 						<div class="span20-80 right-align">
-							<span class="machine bold">Proposal:</span>	
 						</div>
 						<div class="span80-20 left-align">
-							<div class="small-left-margin machine">{{item.getTitle()}}</div>
+							<div class="small-left-margin machine"><h3>{{item.getTitle()}}</h3></div>
 						</div>
 					</div>
-					<!--<iframe width="560" height="315" src="{{item.getPitchVideoUrl()}}" frameborder="0" allowfullscreen></iframe>-->
+					<iframe width="560" height="315" ng-src="{{trustSrc(item.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
 					<div class="row-fluid">
 						<div class="span20-80 right-align">
 							<span class="machine bold">Details:</span>	
 						</div>
-						<div class="span80-20 left-align">
+						<div class="span80-20 right-align">
 							<span class="small-left-margin machine">{{item.getSummary()}}</span>
 						</div>
 					</div>

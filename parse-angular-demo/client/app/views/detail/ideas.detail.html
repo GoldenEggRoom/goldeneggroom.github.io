@@ -35,7 +35,7 @@
 			<span ng-if="detailCtrl.current.getPitchVideoUrl()">
 				<div class="horizontal-line full-fade top-margin bottom-margin"></div>
 				<h4 class="punchy">Pitch Video</h4>
-				<iframe width="420" height="315" src="{{detailCtrl.current.getPitchVideoUrl()}}" frameborder="0" allowfullscreen></iframe>
+				<iframe width="420" height="315" src="{{trustSrc(detailCtrl.current.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
 			</span>
 
 			<div class="horizontal-line full-fade top-margin bottom-margin"></div>

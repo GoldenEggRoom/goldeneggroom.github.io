@@ -21,10 +21,20 @@
     <![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <!-- waiting for ui-router to support angular-1.2, hence some view animations are currently gracefully degrading -->
+<<<<<<< HEAD
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-animate.js"></script>
+=======
+<<<<<<< HEAD
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-animate.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-sanitize.min.js"></script>
  
+=======
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-animate.min.js"></script>
+>>>>>>> a7c81cc9b0519e4d2f21f5db4083eda2af155349
+>>>>>>> cb088bb96db3794f797bf239cb00cc42bab95761
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7370432/708202/css/fonts.css" />

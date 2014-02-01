@@ -1,72 +1,4 @@
-<div class="container">
-    <div class="page-header">
-        <div class="col-md-4">
-            <h2>{{detailCtrl.current.getTitle()}}</h2>
-            <p>{{detailCtrl.current.getSummary()}}</p>
-            <p>Target Group</p>
-        </div>
-        <div class="col-md-4">
-            <br />
-            <p>Egg image with number</p>
-        </div>
-         <div class="col-md-4">
-             <br />
-            <p>Splash Image</p>
-        </div>
-    </div>    
-</div>
-<div class="container">        
-  <!-- Pitch video -->
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Pitch</h2>
-      <p>embedded video code</p>
-      <h2>Problems</h2>
-      <div>
-          <ul>
-              <li>Problem 1</li>
-              <li>Problem 2</li>
-          </ul>
-          <p>*** validations ***</p>
-      </div>
-      <h2>Solutions</h2>
-      <p>Here is the solution...</p>
-    </div>
-    <div class="col-md-4">
-      <h2>Commitments</h2>
-      <div>
-          <ul>
-              <li>7 developers</li>
-              <li>2 designers</li>
-              <li>2 biz developers</li>
-              <li>1 educator</li>
-          </ul>
-      </div>
-   </div>
-  </div>
-</div>
-<div class="container">
-    <div class="row">
-        <h2>
-            How is your solution better?
-        </h2>
-        <p>Here is how...</p>
-    </div>
-    <div class="row">
-        <h2>
-            Feedback
-        </h2>
-        <div>
-            <ul>
-                <li>feedback 1</li>
-                <li>feedback 2</li>
-                <li>feedback 3</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
-<!--
 <div class="row-fluid">
 	<div class="navi-bar-title dark">
 
@@ -74,7 +6,7 @@
 			<i class="icon icon-th-list small-right-margin "></i>List
 		</a>
 
-		    <h1 class="human title">Detail</h1>
+		    <h1 class="human title">{{detailCtrl.current.getTitle()}}</h1>
 
 		<a class="navi-button-main" href="#/crud/{{detailCtrl.current.id}}/edit">
 			Edit
@@ -91,28 +23,46 @@
 		</div>
 		<div class="row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align">
 			
-
 			<div class="row-fluid">
 				<div class="row-fluid">
 					<div class="row-fluid center-align">
-						<h4 class="punchy">Name</h4>
-						<span class="machine muted">{{detailCtrl.current.getName()}}</span>
+						<h4 class="punchy">Problem Statement</h4>
+						<span class="machine muted">{{detailCtrl.current.getTitle()}}</span>
 					</div>
-
 				</div>
+			</div>				
 
-			</div>
-				
+			<span ng-if="detailCtrl.current.getPitchVideoUrl()">
+				<div class="horizontal-line full-fade top-margin bottom-margin"></div>
+				<h4 class="punchy">Pitch Video</h4>
+				<iframe width="420" height="315" ng-src="{{trustSrc(detailCtrl.current.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+			</span>
 
 			<div class="horizontal-line full-fade top-margin bottom-margin"></div>
-			<h4 class="punchy">Reason</h4>
-			<span class="machine muted">{{detailCtrl.current.getReason()}}</span>
-		</div>
-	
-		<div class="row-fluid top-margin">
-			<a ng-click="destroyMonster(detailCtrl.current)" class="btn btn-block btn-large btn-danger">Delete this model</a>			
+			<h4 class="punchy">Pitch Summary</h4>
+			<span class="machine muted">{{detailCtrl.current.getSummary()}}</span>
+
+			<div class="horizontal-line full-fade top-margin bottom-margin"></div>
+			<h4 class="punchy">Commitment Level</h4>
+			<table>
+				<tr>
+					<td>{{detailCtrl.current.getEducatorCommitment()}}</td>
+					<td>educators</td>
+				</tr>
+				<tr>
+					<td>{{detailCtrl.current.getDevCommitment()}}</td>
+					<td>developers</td>
+				</tr>				
+				<tr>
+					<td>{{detailCtrl.current.getDesignCommitment()}}</td>
+					<td>designers</td>
+				</tr>
+				<tr>
+					<td>${{detailCtrl.current.getMonetaryCommitment()}}.00</td>
+					<td>monetary</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	<div class="row-fluid" ng-include src="'app/views/footer.html'"></div>		
 </div>
--->

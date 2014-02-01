@@ -1,6 +1,6 @@
 angular.module('demo')
 
-.controller('DetailController', ['$rootScope', '$scope', '$state', '$stateParams', 'IdeaService', function($rootScope, $scope, $state, $stateParams, IdeaService) {
+.controller('DetailController', ['$rootScope', '$scope', '$state', '$stateParams', '$sce', 'IdeaService', function($rootScope, $scope, $state, $stateParams, $sce, IdeaService) {
   
   $scope.detailCtrl = {
     current : null
@@ -27,6 +27,8 @@ angular.module('demo')
     }
   }
 
-
+  $scope.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  }
 
 }]);
