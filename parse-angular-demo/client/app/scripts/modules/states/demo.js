@@ -28,33 +28,33 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
             }
         }
     })
-    .state('demo.crud', {
+    .state('demo.ideas', {
     	url: '/',
     	views: {
     		'detail@demo' : {
-    			templateUrl: 'app/views/detail/crud.list.html'
+    			templateUrl: 'app/views/detail/ideas.list.html'
     		}
 
     	}
     })
 
-    .state('demo.crud.detail', {
+    .state('demo.ideas.detail', {
     	url: 'crud/{monsterId}',
     	views: {
     		
     		'detail@demo' : {
-    			templateUrl: 'app/views/detail/crud.detail.html',
+    			templateUrl: 'app/views/detail/ideas.detail.html',
                 controller: 'DetailController'
     		}
 
     	}
     })
 
-    .state('demo.crud.detail.edit', {
+    .state('demo.ideas.detail.edit', {
         url: '/edit',
         views: {
             'detail@demo' : {
-                templateUrl: 'app/views/detail/crud.detail.edit.html',
+                templateUrl: 'app/views/detail/ideas.detail.edit.html',
                 controller: 'DetailController'
             }
 

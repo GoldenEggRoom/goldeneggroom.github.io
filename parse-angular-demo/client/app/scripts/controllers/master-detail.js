@@ -16,95 +16,58 @@ angular.module('demo')
     collection: monsters,
     menu : [
       {
-        title: "Angular Parse CRUD",
+        title: "Ideas",
         icon: "icon-cloud",
-        path: "#/",
-        state: "demo.crud"
+        path: "#/ideas",
+        state: "demo.ideas"
 
       },
       {
-        title: "Angular Facebook API",
+        title: "Login",
         icon: "icon-facebook",
         path: "#/facebook",
         state: "demo.facebook.example"
       },
       {
-        title: "Parse Features",
+        title: "Projects",
         icon: "icon-bolt",
-        path: "#/features/",
+        path: "#/projects/",
         state: "demo.features.list"
 
       },
       {
-        title: "Other Features",
+        title: "FAQ",
         icon: "icon-info-sign",
-        path: "#/about/",
+        path: "#/faq/",
         state: "demo.about.list"
 
       }
 
     ],
-    features : [
+    projects : [
       {
-        title: "Parse SDK for data, AngularJS for UI",
+        title: "Project 1",
         icon: "icon-code",
         path: "#/features/data"
       },
       {
-        title: "Angular Wrapper for Parse SDK",
+        title: "Project 2",
         icon: "icon-cloud",
         path: "#/features/parse"
       },
       {
-        title: "Angular Wrapper for Parse Cloud Code",
+        title: "Project 3",
         icon: "icon-cloud",
         path: "#/features/cloud-code"
       },
       {
-        title: "Angular Wrapper for Facebook SDK",
+        title: "Project 4",
         icon: "icon-facebook-sign",
         path: "#/features/facebookSDK"
-      },
-      {
-        title: "Extend Parse.Object & Parse.Collection",
-        icon: "icon-terminal",
-        path: "#/features/parse-sdk"
-      },
-      {
-        title: "Parse SDK + Facebook SDK Load Performance",
-        icon: "icon-time",
-        path: "#/features/facebook"
       }
-
     ],
 
     about : [
-      
-      {
-        title: "Angular State Manager",
-        icon: "icon-sitemap",
-        path: "#/about/state"
-      },
-      {
-        title: "Angular Animations",
-        icon: "icon-magic",
-        path: "#/about/animations"
-      },
-      {
-        title: "BRANDiD UI Kit",
-        icon: "icon-tint",
-        path: "#/about/theme"
-      },
-      {
-        title: "SASS Bootstrap",
-        icon: "icon-twitter",
-        path: "#/about/bootstrap"
-      },
-      {
-        title: "Font Awesome",
-        icon: "icon-flag",
-        path: "#/about/font-awesome"
-      }
 
     ]
 

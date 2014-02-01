@@ -5,18 +5,18 @@ angular.module('app')
 
 	$scope.menuCtrl = {
     	menu: [{
-    		name: "Parse Demo",
-    		state: "demo",
+    		name: "Educator",
+    		state: "edu",
             activeFor: ["demo","features","facebook","about"],
             icon: "icon-user",
-    		href: "#/" 
+    		href: "#/edu/" 
     	},
     	{
-    		name: "Code",
-    		state: "code",
+    		name: "Developer",
+    		state: "dev",
             activeFor: ["code"],
             icon: "icon-github",
-    		href: "http://www.github.com/brandid/parse-angular-demo" 
+    		href: "#/dev/" 
     	}]
     }
 
