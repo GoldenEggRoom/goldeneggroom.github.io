@@ -4,15 +4,16 @@
 	</div>
 
 	<div class="row-fluid width-padding top-padding bottom-padding">
-
-		<div class="row-fluid center-align">
-			<div class="row-fluid">
-				<h1 class="punchy muted light-text-shadow"><i class="icon icon-info-sign small-right-margin"></i></h1>				
-			</div>
-			<div class="row-fluid bottom-margin">
-				<div class="row-fluid center-align machine">
-					<span class="muted">Got an idea? Post an idea here!</span>
-				</div>	
+		<div class="featured-idea" >
+			<a class="next-link">Next Pitch</a>
+			<iframe ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+			<div class="description">
+				<div class="traction">
+					<h3>TRACTION</h3>
+					<span>{{featuredIdea.getTraction()}}</span>
+				</div>
+				<h3>{{featuredIdea.getTitle()}}</h3>
+				<p>{{featuredIdea.getSummary()}}</p>
 			</div>
 		</div>
 		<div class="row-fluid white-back withShadow withRadius center-align">

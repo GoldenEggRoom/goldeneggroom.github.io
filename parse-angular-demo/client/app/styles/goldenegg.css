@@ -1,0 +1,28 @@
+.featured-idea
+{
+	width: 100%;
+}
+.featured-idea .next-link
+{
+	float:left;
+	position: absolute;
+	left: 50%;
+	z-index: 100;
+	text-transform: uppercase;
+	font-weight: bold;
+	bottom:0px;
+
+}
+.featured-idea iframe {
+	width:66%;
+}
+.featured-idea .description
+{
+	width:33%;
+}
+
+.traction
+{
+
+}
+
