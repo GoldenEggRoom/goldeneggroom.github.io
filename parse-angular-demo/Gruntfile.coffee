@@ -17,6 +17,8 @@ module.exports = (grunt)->
 
   grunt.registerTask('prod', ['build', 'optimize']);
 
+  grunt.registerTask('deploy', ['prod', 'copy:deploy']);
+
 
   # Configuration
   grunt.config.init
@@ -26,6 +28,7 @@ module.exports = (grunt)->
     CLIENT_DIR:     'client/'
     COMPONENTS_DIR: 'components/'
     SERVER_DIR:     'server/'
+    DEPLOY_DIR:     '../'
 
     # Glob CONSTANTS
     ALL_FILES:      '**/*'
@@ -77,6 +80,14 @@ module.exports = (grunt)->
           cwd:      '<%= CLIENT_DIR %>'
           src:      '<%= JS_FILES %>'
           dest:     '<%= BUILD_DIR %>'
+        ]
+
+      deploy:
+        files:      [
+          expand:   true
+          cwd:      '<%= BUILD_DIR %>'
+          src:      '<%= ALL_FILES %>'
+          dest:     '<%= DEPLOY_DIR %>'
         ]
 
       # app (non-Bower) HTML in `client`
