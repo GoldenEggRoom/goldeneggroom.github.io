@@ -323,8 +323,23 @@ angular.module('app').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('app/views/detail/ideas.hero.html',
+    "<div class=hero-unit><h1>This is an awesome idea</h1><iframe width=560 height=315 src=//www.youtube.com/embed/kjrBjgQbzLA frameborder=0 allowfullscreen></iframe></div>"
+  );
+
+
+  $templateCache.put('app/views/detail/ideas.html',
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><h1 class=\"human title\">Welcome to the Golden Egg Room!</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=row-fluid><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-info-sign small-right-margin\"></i></h1></div><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align machine\"><span class=muted>Got an idea? Post an idea here!</span></div></div></div><div class=\"row-fluid center-align\"><div class=hero-unit><h1>This is an awesome idea</h1></div></div><div class=\"row-fluid white-back withShadow withRadius center-align\"><a href=#/ideas/{{item.id}} class=\"block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top\" ng-repeat=\"item in ideasCtrl.collection.models\" ng-animate=\"{ enter: 'waveForward-enter', leave: 'waveForward-leave' }\"><div class=\"span90-10 muted\"><div class=\"row-fluid tiny-bottom-margin\"><div class=\"span20-80 right-align\"><span class=\"machine bold\">Proposal:</span></div><div class=\"span80-20 left-align\"><div class=\"small-left-margin machine\">{{item.getTitle()}}</div></div></div><div class=row-fluid><div class=\"span20-80 right-align\"><span class=\"machine bold\">Details:</span></div><div class=\"span80-20 left-align\"><span class=\"small-left-margin machine\">{{item.getSummary()}}</span></div></div></div><div class=\"span10-90 muted center-align small-top-padding\"><div class=small-top-margin><i class=\"icon icon-chevron-right\"></i></div></div></a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
+  );
+
+
   $templateCache.put('app/views/detail/ideas.list.html',
     "<div class=row-fluid><div class=\"navi-bar-title dark\"><h1 class=\"human title\">Proposals</h1><a ng-click=createIdea() class=navi-button-main><i class=\"icon icon-plus\"></i></a></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=row-fluid><h1 class=\"human muted light-text-shadow\"><i class=\"icon icon-cloud small-right-margin\"></i></h1></div><div class=\"row-fluid top-margin big-bottom-margin\"><div class=\"row-fluid center-align\"><span class=\"muted machine\">PITCH. GROW. VOTE. BUILD.</span></div></div></div><div class=\"row-fluid white-back withShadow withRadius center-align\"><a href=#/ideas/{{item.id}} class=\"block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top\" ng-repeat=\"item in masterDetailCtrl.collection.models\" ng-animate=\"{ enter: 'waveForward-enter', leave: 'waveForward-leave' }\"><div class=\"span90-10 muted\"><div class=\"row-fluid tiny-bottom-margin\"><div class=\"span20-80 right-align\"><span class=\"machine bold\">Proposal:</span></div><div class=\"span80-20 left-align\"><div class=\"small-left-margin machine\">{{item.getName()}}</div></div></div><div class=row-fluid><div class=\"span20-80 right-align\"><span class=\"machine bold\">Details:</span></div><div class=\"span80-20 left-align\"><span class=\"small-left-margin machine\">{{item.getReason()}}</span></div></div></div><div class=\"span10-90 muted center-align small-top-padding\"><div class=small-top-margin><i class=\"icon icon-chevron-right\"></i></div></div></a></div></div></div>"
+  );
+
+
+  $templateCache.put('app/views/detail/welcome.html',
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><h1 class=\"human title\">Welcome to the Golden Egg Room!</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=row-fluid><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-info-sign small-right-margin\"></i></h1></div><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align machine\"><span class=muted>Got an idea? Post an idea here!</span></div></div></div><div class=\"two-thirds relative\"><div ui-view=detail booty-shake=\"\"></div></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
