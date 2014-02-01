@@ -12,15 +12,15 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
             },
             'panel@demo': {
                 templateUrl: 'app/views/master-detail.html',
-                controller: 'MasterDetailController',
+                controller: 'IdeasController',
                 resolve: {
-                    'monsters': ['MonsterService', function(MonsterService) {
+                    'ideas': ['IdeaService', function(IdeaService) {
 
                         // get the collection from our data definitions
-                        var monsters = new MonsterService.collection;
+                        var ideas = new IdeaService.collection;
 
                         // use the extended Parse SDK to load the whole collection
-                        return monsters.load();
+                        return ideas.load();
 
                     }]
                 }
@@ -32,8 +32,7 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
         url: '/',
         views: {
             'detail@demo': {
-                templateUrl: 'app/views/detail/ideas.html',
-                controller: 'IdeasController'
+                templateUrl: 'app/views/detail/ideas.html'
             },
             'hero@demo.ideas':{
                 templateUrl: 'app/views/detail/ideas.hero.html',

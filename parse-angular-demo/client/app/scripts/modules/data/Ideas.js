@@ -27,13 +27,13 @@ angular.module('ExternalDataServices')
 		},
 		getTitle: function(title) {
 			return this.get('title');
-		}
+		},
 		getSummary: function(summary) {
 			return this.get('summary');
-		}
+		},
 		getPitchVideoUrl: function(pitchVideoUrl) {
 			return this.get('pitchVideoUrl');
-		}
+		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}
