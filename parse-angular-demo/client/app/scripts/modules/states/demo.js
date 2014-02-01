@@ -34,10 +34,13 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
             'detail@demo': {
                 templateUrl: 'app/views/detail/ideas.html',
                 controller: 'IdeasController'
+            },
+            'hero@demo.ideas':{
+                templateUrl: 'app/views/detail/ideas.hero.html',
             }
+
         }
     })
-
     .state('demo.ideas.detail', {
     	url: 'ideas/{monsterId}',
     	views: {

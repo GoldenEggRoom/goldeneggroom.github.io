@@ -29,13 +29,6 @@ angular.module('demo')
         state: "demo.facebook.example"
       },
       {
-        title: "Projects",
-        icon: "icon-bolt",
-        path: "#/projects/",
-        state: "demo.features.list"
-
-      },
-      {
         title: "FAQ",
         icon: "icon-info-sign",
         path: "#/faq/",

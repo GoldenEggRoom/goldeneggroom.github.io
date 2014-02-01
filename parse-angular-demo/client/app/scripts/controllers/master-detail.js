@@ -15,13 +15,6 @@ angular.module('demo')
     animate : "crossfade",
     collection: monsters,
     menu : [
-    {
-        title: "Welcome",
-        icon: "icon-home",
-        path: "#/ideas",
-        state: "demo.welcome"
-
-      },
       {
         title: "Ideas",
         icon: "icon-cloud",
@@ -34,13 +27,6 @@ angular.module('demo')
         icon: "icon-facebook",
         path: "#/facebook",
         state: "demo.facebook.example"
-      },
-      {
-        title: "Projects",
-        icon: "icon-bolt",
-        path: "#/projects/",
-        state: "demo.features.list"
-
       },
       {
         title: "FAQ",
