@@ -26,6 +26,23 @@ angular.module('facebook', ['ParseServices', 'ExternalDataServices'])
 
     	}
     })
+    .state('demo.facebook.role', {
+        url: '/facebook/role',
+        views: {
+            'detail@demo': {
+                templateUrl: 'app/views/detail/facebook.role.html',
+                controller: 'FacebookExampleController',
+                resolve: {
+
+                    'goldenEggUsers': ['GoldenEggUserService', function (GoldenEggUserService) {
+                        var goldenEggUsers = new GoldenEggUserService.collection;
+                        return goldenEggUsers.load();
+                    }]
+                }
+            }
+
+        }
+    })
 	
 
 }])
