@@ -11,27 +11,19 @@
     <meta name="viewport"               content="width=device-width, initial-scale=1.0">
     <meta name="description"            content="Golden Egg Room">
 
-<<<<<<< HEAD
-    <!-- build:css app/styles/app.min.css -->
-    <link rel="stylesheet" href="app/styles/app.css">
-    <link rel="stylesheet" href="app/styles/goldenegg.css">
-    <!-- endbuild -->
-=======
-    <link rel="stylesheet" href="app/styles/1350fbd8.app.min.css">
->>>>>>> c6acc856a5354cf112d23834c4549a43a04f476c
+    <link rel="stylesheet" href="app/styles/81d1c6fe.app.min.css">
 
     <!--[if lt IE 9]>
     <script src="components/html5shiv-dist/html5shiv.js"></script>
     <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- waiting for ui-router to support angular-1.2, hence some view animations are currently gracefully degrading -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-animate.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-sanitize.min.js"></script>
  
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7370432/708202/css/fonts.css" />
     
   </head>
   <body>
@@ -52,51 +44,13 @@
     </div>
 
 
-    <script src="//www.parsecdn.com/js/parse-1.2.15.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.2.15.min.js"></script>
     
 <<<<<<< HEAD
-    <!-- build:js app/scripts/all.min.js -->
-    <script src="components/modernizr/modernizr.js"></script>
-    <script src="components/lodash/dist/lodash.js"></script>
-    <script src="app/scripts/libs/angular-1.2-ui-router.js"></script>
-
-
-
-    <script src="app/scripts/app.js"></script>
-    <script src="app/scripts/app.templates.js"></script>
-
-    
-    <script src="app/scripts/modules/states/demo.js"></script>
-    <script src="app/scripts/modules/states/features.js"></script>
-    <script src="app/scripts/modules/states/facebook.js"></script>
-    <script src="app/scripts/modules/states/about.js"></script>
-    
-    <script src="app/scripts/modules/directives/bootyShake.js"></script>
-    <script src="app/scripts/modules/directives/forms.js"></script>
-    <script src="app/scripts/modules/directives/loader.js"></script>
-    
-    <script src="app/scripts/controllers/menu.js"></script>
-    <script src="app/scripts/controllers/master-detail.js"></script>
-    <script src="app/scripts/controllers/detail.js"></script>
-    <script src="app/scripts/controllers/ideas.js"></script>
-    <script src="app/scripts/controllers/facebook-example.js"></script>
-  
-    <!-- Parse specific -->
-    <script src="app/scripts/services/ParseServices.js"></script>
-    <script src="app/scripts/services/ParseQueryAngular.js"></script>
-    <script src="app/scripts/modules/data/_ParseObjects.js"></script>
-    <script src="app/scripts/modules/data/Monsters.js"></script>
-    <script src="app/scripts/modules/data/Ideas.js"></script>
-    <script src="app/scripts/modules/data/GoldenEggUsers.js"></script>
-
-    
-    <!-- Facebook angular bindings -->
-    <script src="app/scripts/services/FacebookAngularPatch.js"></script>
-
-    <!-- endbuild -->
+    <script src="app/scripts/59e23500.all.min.js"></script>
 =======
-    <script src="app/scripts/8677115e.all.min.js"></script>
->>>>>>> c6acc856a5354cf112d23834c4549a43a04f476c
+    <script src="app/scripts/affeadff.all.min.js"></script>
+>>>>>>> 7411563077e0c6d3ccf222b3079d06937d4c9369
 
     <!-- Async Social SDKs -->
     <div id="fb-root"></div>
