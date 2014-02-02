@@ -7,7 +7,6 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
- 
 /* line 19, ../../../components/sass-bootstrap/lib/_reset.scss */
 article,
 aside,
@@ -13584,6 +13583,9 @@ textarea:focus, input:focus {
 }
 
 /* line 44, ../../../client/app/styles/brandid-ui/_btn.scss */
+.btn-fb .row-fluid > div:first-child, .btn-fb .btn-fb > div:first-child, .btn-fb .btn-tw > div:first-child {
+  border-right: 1px solid #7699e5;
+}
 
 /* line 52, ../../../client/app/styles/brandid-ui/_btn.scss */
 .btn-tw .row-fluid > div:first-child, .btn-tw .btn-fb > div:first-child, .btn-tw .btn-tw > div:first-child {
@@ -13746,7 +13748,7 @@ form .green {
 }
 /* line 26, ../../../client/app/styles/brandid-ui/_forms.scss */
 form .red {
-  Â color: red;
+   color: red;
 }
 
 /* line 1, ../../../client/app/styles/ng-animate/angular-1.2/_crossfade.scss */

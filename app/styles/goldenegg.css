@@ -1,14 +1,12 @@
 html {
     background-color: #FAF3E6; /* Serpia */
+    font-family: Georgia, Times, sans-serif;
+    font-size: 22px;
 }
 
 h1,
 h2 {
     font-family: ActaDisplay-Book, Times;
-}
-
-.btn-primary {
-    color: #3F0632; /* Fusia Purple */
 }
 
 h1,
@@ -68,65 +66,6 @@ p {
     background-color: #FAF3E6; /* Serpia */
 }
 
-.btn-topnav {
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    background-color: #800080; /* Fusia Purple */
-    color: #fff;
-    font-size: 18px;
-}
-
-.top-nav-bar a {
-    font-weight: bolder;
-    font-size: 24px;
-    margin-left: 50px;
-    padding: 15px;
-}
-
-.top-nav-bar input {
-    height: 46px;
-    width: 250px;
-    padding: 0 12px 0 25px;
-    margin-left: 45px;
-    background: white url("http://cssdeck.com/uploads/media/items/5/5JuDgOa.png") 8px 6px no-repeat;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #a8acbc #babdcc #c0c3d2;
-    border-radius: 13px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
-    -moz-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
-    -ms-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
-    -o-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
-    box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
-}
-
-.top-nav-bar input:focus {
-    outline: none;
-    border-color: #66b1ee;
-    -webkit-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
-    -moz-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
-    -ms-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
-    -o-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
-    box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
-}
-
-.top-nav-bar h3 {
-    font-family: 'Georgia','Times',serif;
-}
-
-.top-nav-bar h1 {
-    margin-top: 0px;
-}
-
-.top-nav-bar h3 {
-    font-style: italic;
-    margin-top: 10px;
-}
 
 
 .featured-idea
@@ -150,15 +89,19 @@ p {
 .featured-idea .next-link
 {
 	position: absolute;
-	left:70%;
+	right:32%;
 	z-index: 100;
 	text-transform: uppercase;
 	font-size: 18px;
+    font-weight: bold;
 	cursor: pointer;
 	color: white;
-    margin-top: 320px;
-    margin-left: -132px;
-	text-shadow: 0 0 1em #87F, 0 0 1em #87F, 0 0 1em #87F;
+    margin-top: 310px;
+	text-shadow: 0 0 1em #231B58, 0 0 1em #231B58, 0 0 1em #231B58;
+    background: #231B58;
+    border-radius: 5px;
+    padding: 5px;
+
 
 }
 .featured-idea iframe {
@@ -171,17 +114,23 @@ p {
 .featured-idea p{
 	font-style: italic;
     text-overflow: ellipsis;
-    max-height: 140px;
+    font-size: medium;
+    max-height: 95px;
     overflow: hidden;
+}
+.featured-idea .description a{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    display: block;
 }
 .featured-idea .description
 {
-/*	float:right;
-	width: 320px;
-	float: right;
-	padding: 8px 24px;*/
     max-height: 350px;
     overflow: hidden;
+    margin: 10px 13px 4px 13px;
+    text-align: center;
 }
 
 .featured-idea .traction
@@ -251,4 +200,84 @@ p {
     font-size: 30px;
     font-weight: bold;
 
+}
+.discussion {
+    background-color: none;
+    font-family: Georgia, Times, sans-serif;
+}
+
+.disc-comment-list {
+    margin-left: 0;
+    margin-top: 12px;
+}
+
+.disc-comment {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.55;
+    list-style: none;
+    padding-left: 64px;
+    /*background-color: white;*/
+    margin: 0;
+    margin-bottom: 14px;
+}
+
+.disc-comment-time {
+    display: inline-block;
+    color: ;
+    margin-left: 10px;
+    font-family: Futura, sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #777777;
+}
+
+.icon-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.icon-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+header ul {
+    margin: 0 0 0 0;
+    list-style: none;
+}
+
+header li {
+    display: inline-block;
+    margin: 0 20px 10px 0;
+    vertical-align: center;
+    line-height: 1.55;
+}
+
+header .user-login,
+header .user-info {
+    float: right;
+    margin: 9px 0 0 0;
+}
+
+header input[type=search] {
+    font-family: inherit;
+    width: 185px;
+    background-color: white;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    font-size: inherit;
+    padding: 15px 10px 9px 10px;
+    margin-bottom: 0;
+    margin-top: 0;
 }

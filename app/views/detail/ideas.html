@@ -3,8 +3,9 @@
 		<div class="row-fluid span12 featured-idea" >
 
 			<iframe  ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen class="span9"></iframe>
-
-			<a class="next-link" ng-click="nextFeature()">Next Pitch</a>
+			<div class="next-link">
+				<a  ng-click="nextFeature()">Next Pitch</a>
+			</div>
 			<div class="span3 description">
 				<div class="traction">
 					<h3>TRACTION</h3>
@@ -12,6 +13,7 @@
 				</div>
 				<h3>{{featuredIdea.getTitle()}}</h3>
 				<p>"{{featuredIdea.getSummary()}}"</p>
+				<div><a href="#/ideas/{{featuredIdea.id}}">Learn more</a></div>
 			</div>
 		</div>
 		<div class="row-fluid">
