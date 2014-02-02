@@ -72,7 +72,16 @@ angular.module('facebook')
                                                   lastName: lastName,
                                                   facebookId: facebookId
                                               });
-                                              window.location = "#/facebook/role";
+                                              if (user.get('role')) {
+                                                  $('.user-name').html('Welcome! ' + firstName + ' ' + lastName + '');
+                                                  $('.user-pic').css('background-image', 'url("' + picture + '")');
+                                                  $('.lnk-login').hide();
+                                                  $('.user-info').show();
+                                                  window.location = "#/";
+
+                                              } else {
+                                                  window.location = "#/facebook/role";
+                                              }
                                           });
                                       }
                                     );

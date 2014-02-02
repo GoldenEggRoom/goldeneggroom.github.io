@@ -570,7 +570,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/header.html',
-    "<header class=\"row-fluid center-align header\"><div class=\"row-fluid top-margin top-nav-bar\"><ul><li><a href=javascipt:><img src=img/egg-gold.png alt=logo width=36 height=auto></a></li><li><a href=javascipt:>Ideas</a></li><li><a href=javascipt:>How it works</a></li><li><input type=search placeholder=Search></li><li><a href=#/create class=\"btn btn-large btn-primary\">Launch an idea</a></li><li class=user-login><a class=lnk-login href=#/facebook>Log in</a></li><li class=user-info style=display:none><div class=user-pic style=\"width:50px; height: 50px; float: right\"></div><div class=user-role style=color:blue></div><div class=user-name style=color:blue></div></li></ul></div><div style=clear:both></div></header>"
+    "<header class=\"row-fluid center-align header\"><div class=\"row-fluid top-margin top-nav-bar\"><ul><li><a href=javascipt:><img src=img/egg-gold.png alt=logo width=36 height=auto></a></li><li><a href=javascipt:>Ideas</a></li><li><a href=javascipt:>How it works</a></li><li><input type=search placeholder=Search></li><li><a href=#/create class=\"btn btn-large btn-primary\">Launch an idea</a></li><li class=user-login><a class=lnk-login href=#/facebook>Log in</a></li><li><div class=user-info style=display:none><div class=user-pic style=\"width:50px; height: 50px; float: right; background-image:url({{user.picture }})\"></div><div class=user-role style=color:blue></div><div class=user-name style=color:blue>Welcome! {{user.firstName }} {{user.lastName}}</div></div></li></ul></div><div style=clear:both></div></header>"
   );
 
 
