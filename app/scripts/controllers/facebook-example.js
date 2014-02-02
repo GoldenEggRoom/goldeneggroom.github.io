@@ -11,13 +11,6 @@ angular.module('facebook')
 
   $scope.asEducator = function () {
       goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-<<<<<<< HEAD
-          goldenEggUsers.remove(goldenEggUser.models[0].id);
-          goldenEggUser.models[0].attributes['role'] = 'educator';
-          goldenEggUsers.addGoldenEggUser(goldenEggUser.models[0].attributes['userId'], goldenEggUser.models[0].attributes['faecbookId'], null, 'educator', goldenEggUser.models[0].attributes['firstName'], goldenEggUser.models[0].attributes['lastName']);
-      });
-  }
-=======
           var user = goldenEggUser.models[0];
 
           goldenEggUsers.addGoldenEggUser(user.getUserId(), user.getFacebookId(), null, 'educator', user.getFirstName(), user.getLastName(), user.getPicture());
@@ -36,7 +29,6 @@ angular.module('facebook')
       });
   }
 
->>>>>>> 9b7298027b5fa3c340d7d9d690a2a4d139efed40
   if (Parse.User.current()) {
       $scope.facebookCtrl.fbAuthData = Parse.User.current().get('authData');
       
