@@ -53,7 +53,7 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
     })
 
     .state('demo.ideas.detail.edit', {
-        url: 'ideas/{monsterId}/edit',
+        url: '/edit',
         views: {
             'detail@demo' : {
                 templateUrl: 'app/views/detail/ideas.detail.edit.html',
