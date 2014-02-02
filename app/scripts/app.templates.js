@@ -64,10 +64,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/detail/facebook.example.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><h1 class=\"human title\">Facebook API Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=row-fluid><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-facebook small-right-margin\"></i></h1></div><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><span class=\"muted machine\">Extending the Facebook JavaScript SDK with FB.apiAngular</span></div></div></div><div class=\"row-fluid max-width-400 withShadow bottom-margin\"><a ng-click=fbConnect() class=\"btn-fb btn-large\"><div class=row-fluid><div class=\"span25-75 center-align\"><h4 class=\"no-height-margin line height-btn\"><i class=\"icon icon-facebook icon-large lightest-text\"></i></h4></div><div class=\"span75-25 center-align\"><span class=\"machine no-height-margin line normalcase height-btn lightest-text\">Sign in</span></div></div></a></div><pre>\n" +
-    "  $scope.facebookCtrl.fbAuthData = {{ facebookCtrl.fbAuthData }}\n" +
-    "\n" +
-    "</pre></div></div>"
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><h1 class=\"human title\">Facebook</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=row-fluid><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-facebook small-right-margin\"></i></h1></div></div><div class=\"row-fluid max-width-400 withShadow bottom-margin\"><a ng-click=fbConnect() class=\"btn-fb btn-large\"><div class=row-fluid><div class=\"span25-75 center-align\"><h4 class=\"no-height-margin line height-btn\"><i class=\"icon icon-facebook icon-large lightest-text\"></i></h4></div><div class=\"span75-25 center-align\"><span class=\"machine no-height-margin line normalcase height-btn lightest-text\">Sign in</span></div></div></a></div></div></div>"
   );
 
 
@@ -359,7 +356,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/header.html',
-    "<header class=\"row-fluid center-align\"><div class=\"row-fluid top-margin top-nav-bar\"><img src=img/ge-logo.png alt=logo width=45 height=45> <a href=javascript:>Ideas</a> <a href=javascipt:>How it works</a><input value=search><a href=javascript: class=btn-topnav>Launch an idea</a> <a href=javascript:>Sign in</a></div><div class=\"row-fluid top-nav-bar\"><br><br><img src=img/ge-logo.png alt=logo width=100 height=100></div><div class=\"row-fluid top-nav-bar\"><h1>Golden Egg</h1><h3>Ideas for education leade</h3></div></header>"
+    "<header class=\"row-fluid center-align\"><div class=\"row-fluid top-margin top-nav-bar\"><img src=img/ge-logo.png alt=logo width=45 height=45> <a href=javascript:>Ideas</a> <a href=javascipt:>How it works</a><input value=search><a href=javascript: class=btn-topnav>Launch an idea</a><div style=\"float:right; padding-right: 10px\"><a class=lnk-login href=#/facebook>Log in</a><div class=user-info style=display:none><div class=user-pic style=\"width:50px; height: 50px; float: right\"></div><div class=user-role style=color:blue></div><div class=user-name style=color:blue></div></div></div><div style=clear:both></div></div><div class=\"row-fluid top-nav-bar\"><br><br><img src=img/ge-logo.png alt=logo width=100 height=100></div><div class=\"row-fluid top-nav-bar\"><h1>Golden Egg</h1><h3>Ideas for education leade</h3></div></header>"
   );
 
 
