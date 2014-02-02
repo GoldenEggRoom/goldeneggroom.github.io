@@ -1,6 +1,6 @@
 angular.module('forms', [])
 
-.directive('editMonsterForm', ['ParseQueryAngular', '$location', function(ParseQueryAngular, $location) {
+.directive('editIdeaForm', ['ParseQueryAngular', '$location', function(ParseQueryAngular, $location) {
 
   var addLoaderTo = function(element, name, message) {
     element.append('<div id="'+name+'" class="important-white-back opacity-9 loading absolute top" style="width:100%; height:100%;"><div class="v-outer-container" style="height: 100%"><div class="v-inner-container"><div class="v-aligned-content big-top-margin"><span class="muted">' + message + '</span></div></div></div></div>');
@@ -9,58 +9,55 @@ angular.module('forms', [])
   return {
     restrict: 'A',
     scope: {
-      monsterToSave: "="
+      ideaToSave: "="
     },
     link: function(scope, element, attrs) {
 
       // need to put a watch here because directive is loaded but Parse promise is not finished loading the monsters yet
 
-      scope.editedMonster = {
-        name: null,
-        reason: null
+      scope.editedIdea = {
+        title: null,
+        summary: null,
+        pitchVideoUrl: null
       }
 
-      scope.$watch('monsterToSave.attributes.name', function(name) {
-        scope.editedMonster.name = name;
-
+      scope.$watch('ideaToSave.attributes.title', function(title) {
+        scope.editedIdea.title = title;
       })
 
-      scope.$watch('monsterToSave.attributes.reason', function(reason) {
-        scope.editedMonster.reason = reason;
-
+      scope.$watch('ideaToSave.attributes.summary', function(summary) {
+        scope.editedIdea.summary = summary;
       })
-      
 
-      scope.saveMonster = function() {
+      scope.$watch('ideaToSave.attributes.pitchVideoUrl', function(pitchVideoUrl) {
+        scope.editedIdea.pitchVideoUrl = pitchVideoUrl;
+      })
 
-
+      scope.saveIdea = function() {
 
         // put the form in a loading state
         var loadingContainer = $('#loadingContainer');
         addLoaderTo(loadingContainer, 'savingForm', 'Saving');
         element.find('button').attr('disabled','disabled');
 
-
         // set the new attributes
-        scope.monsterToSave.setName(scope.editedMonster.name);
-        scope.monsterToSave.setReason(scope.editedMonster.reason);
-
+        scope.ideaToSave.setTitle(scope.editedIdea.title);
+        scope.ideaToSave.setSummary(scope.editedIdea.summary);
+        scope.ideaToSave.setPitchVideoUrl(scope.editedIdea.pitchVideoUrl);
 
         // perform the save
-
-        scope.monsterToSave.saveParse().then(function(monster) {
+        scope.ideaToSave.saveParse().then(function(idea) {
 
           //remove the loader
-          $('#savingForm').remove()
+          $('#savingForm').remove();
 
-          $location.path('/crud/' + monster.id);
+          $location.path('/ideas/' + idea.id);
 
         }, function(err) {
           // catch any errors
           alert('Error saving to Parse, check the console and network tab')
           console.log(err)
         })
-
 
       }
 
