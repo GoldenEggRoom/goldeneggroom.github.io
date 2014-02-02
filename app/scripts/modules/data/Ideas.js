@@ -66,6 +66,12 @@ angular.module('ExternalDataServices')
 			return this.get('devCommitment') + this.get('designCommitment') + 
 				this.get('educatorCommitment') + this.get('monetaryCommitment');
 		},
+		getCreatedAt: function() {
+			return this.get('createdAt');
+		},
+		getUpdateAt: function() {
+			return this.get('updateAt');
+		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}

@@ -1,6 +1,6 @@
 angular.module('demo')
 
-.controller('DetailController', ['$rootScope', '$scope', '$state', '$stateParams', '$sce', 'IdeaService', function($rootScope, $scope, $state, $stateParams, $sce, IdeaService) {
+.controller('DetailController', ['$rootScope', '$scope', '$state', '$stateParams', '$sce', '$location', 'IdeaService', function($rootScope, $scope, $state, $stateParams, $sce, $location, IdeaService) {
   
   $scope.detailCtrl = {
     current : null
@@ -13,6 +13,40 @@ angular.module('demo')
     })
   // })
 
+  $scope.detailCtrl.editCurrent = {
+    title: null,
+    summary: null,
+    pitchVideoUrl: null
+  }
+
+  if ($scope.detailCtrl.current) {
+    $scope.detailCtrl.editCurrent.title = $scope.detailCtrl.current.getTitle()
+    $scope.detailCtrl.editCurrent.summary = $scope.detailCtrl.current.getSummary()
+    $scope.detailCtrl.editCurrent.pitchVideoUrl = $scope.detailCtrl.current.getPitchVideoUrl()
+  }
+
+  $scope.detailCtrl.saveIdea = function() {
+
+    // set the new attributes
+    $scope.detailCtrl.current.setTitle($scope.detailCtrl.editCurrent.title);
+    $scope.detailCtrl.current.setSummary($scope.detailCtrl.editCurrent.summary);
+    $scope.detailCtrl.current.setPitchVideoUrl($scope.detailCtrl.editCurrent.pitchVideoUrl);
+
+    // perform the save
+    $scope.detailCtrl.current.saveParse().then(function(idea) {
+
+      //remove the loader
+      //$('#savingForm').remove();
+
+      $location.path('/ideas/' + idea.id);
+
+    }, function(err) {
+      // catch any errors
+      alert('Error saving to Parse, check the console and network tab')
+      console.log(err)
+    })
+
+  }
 
   $scope.transitionTo = function(state) {
     $state.transitionTo(state);

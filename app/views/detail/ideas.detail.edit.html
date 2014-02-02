@@ -22,28 +22,28 @@
 		
 				<div class="row-fluid left-align">
 
-					<form edit-idea-form idea-to-save="detailCtrl.current" name="editForm" class="form-horizontal" ng-submit="saveIdea()" novalidate>
+					<form name="editForm" class="form-horizontal" novalidate>
 					  <div class="control-group">
 					    <label class="control-label" for="inputTitle">Problem Statement</label>
 					    <div class="controls">
-					      <input style="width:97%" type="text" ng-model="editedIdea.title" placeholder="Title" required>
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.title" placeholder="Title" required>
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <label class="control-label" for="inputSummary">Problem Summary</label>
 					    <div class="controls">
-					      <input style="width:97%" type="text" ng-model="editedIdea.summary" placeholder="Summary" required>
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.summary" placeholder="Summary" required>
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <label class="control-label" for="inputPitchVideoUrl">Pitch Video URL</label>
 					    <div class="controls">
-					      <input style="width:97%" type="text" ng-model="editedIdea.pitchVideoUrl" placeholder="PicthVideoUrl">
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.pitchVideoUrl" placeholder="PicthVideoUrl">
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <div class="controls">
-					      <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-block btn-large btn-success">Save To Parse</button>
+					      <button ng-click="detailCtrl.saveIdea()" class="btn btn-block btn-large btn-success">Save To Parse</button>
 					    </div>
 					  </div>
 					</form>

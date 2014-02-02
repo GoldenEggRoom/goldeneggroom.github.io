@@ -9,6 +9,13 @@ angular.module('facebook')
     response : {}
   };
 
+  $scope.asEducator = function () {
+      goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
+          goldenEggUsers.remove(goldenEggUser.models[0].id);
+          goldenEggUser.models[0].attributes['role'] = 'educator';
+          goldenEggUsers.addGoldenEggUser(goldenEggUser.models[0].attributes['userId'], goldenEggUser.models[0].attributes['faecbookId'], null, 'educator', goldenEggUser.models[0].attributes['firstName'], goldenEggUser.models[0].attributes['lastName']);
+      });
+  }
   if (Parse.User.current()) {
       $scope.facebookCtrl.fbAuthData = Parse.User.current().get('authData');
       
@@ -22,9 +29,13 @@ angular.module('facebook')
           if (!userInfo['role']) {
               window.location = "#/facebook/role";
               return;
+          } else {
+              window.location = "#/";
+
           }
       });
   } else {
+      
 
       $scope.fbConnect = function () {
 
