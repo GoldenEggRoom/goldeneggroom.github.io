@@ -11,17 +11,38 @@ angular.module('facebook')
 
   $scope.asEducator = function () {
       goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-          goldenEggUsers.remove(goldenEggUser.models[0].id);
-          goldenEggUser.models[0].attributes['role'] = 'educator';
-          goldenEggUsers.addGoldenEggUser(goldenEggUser.models[0].attributes['userId'], goldenEggUser.models[0].attributes['faecbookId'], null, 'educator', goldenEggUser.models[0].attributes['firstName'], goldenEggUser.models[0].attributes['lastName']);
+          var user = goldenEggUser.models[0];
+
+          goldenEggUsers.addGoldenEggUser(user.getUserId(), user.getFacebookId(), null, 'educator', user.getFirstName(), user.getLastName(), user.getPicture());
+          goldenEggUsers.removeGoldenEggUser(user);
+          window.location = "#/";
+      });
+  };
+
+  $scope.asDeveloper = function () {
+      goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
+          var user = goldenEggUser.models[0];
+
+          goldenEggUsers.addGoldenEggUser(user.getUserId(), user.getFacebookId(), null, 'developer', user.getFirstName(), user.getLastName(), user.getPicture());
+          goldenEggUsers.removeGoldenEggUser(user);
+          window.location = "#/";
       });
   }
+
   if (Parse.User.current()) {
       $scope.facebookCtrl.fbAuthData = Parse.User.current().get('authData');
       
       goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-          var userInfo = goldenEggUser.models[0].attributes;
-          $('.user-info').html(userInfo['firstName'] + ' ' + userInfo['lastName']);
+          var userInfo = goldenEggUser.models[0];
+          Parse.User.current().userId = userInfo.getUserId();
+          Parse.User.current().firstName = userInfo.getFirstName();
+          Parse.User.current().lastName = userInfo.getLastName();
+          Parse.User.current().picture = userInfo.getPicture();
+
+          $('.user-name').html('Welcome ' + userInfo.getRole() + ' ' + userInfo.getFirstName() + ' ' + userInfo.getLastName() + '!');
+
+          $('.user-pic').css('background-image', 'url("' + userInfo.getPicture() + '")');
+
           $('.lnk-login').hide();
 
           $('.user-info').show();
@@ -47,16 +68,30 @@ angular.module('facebook')
                   {
 
                       success: function (user) {
+                          debugger;
                           var userId = user.id;
                           FB.api("/me", function (response) {
-                              $scope.facebookCtrl.response = response;
+                             
                               if (response && !response.error) {
-                                  goldenEggUsers.addGoldenEggUser(userId, response.id, null, null, response.first_name, response.last_name);
-                                  window.location = "#/facebook/role";
+                                  var facebookId = response.id;
+                                  var firstName = response.first_name;
+                                  var lastName = response.last_name;
+                                  FB.api(
+                                      "/me/picture",
+                                      function (response) {
+                                          debugger;
+
+                                          var picture = response.data.url;
+                                          if (response && !response.error) {
+                                              goldenEggUsers.addGoldenEggUser(userId, facebookId, null, null, firstName, lastName, picture);
+                                              window.location = "#/facebook/role";
+                                          }
+                                      }
+                                    );
 
                               }
-                          }
-                          );
+                          });
+
                       }, error: function (err) {
                           console.log(err);
                       }
