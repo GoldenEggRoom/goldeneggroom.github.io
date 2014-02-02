@@ -57,6 +57,19 @@ angular.module('demo')
 
   }
 
+  $scope.detailCtrl.vote = function() {
+
+    $scope.detailCtrl.current.incrementEducatorVotes();
+
+    $scope.detailCtrl.current.saveParse().then(function(idea) {
+
+    }, function(err) {
+      // catch any errors
+      alert('Error saving to Parse, check the console and network tab')
+      console.log(err)
+    })
+  }
+
   $scope.transitionTo = function(state) {
     $state.transitionTo(state);
   }
