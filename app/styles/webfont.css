@@ -24,5 +24,10 @@
 @import url("http://hello.myfonts.net/count/29c680");
 
   
-@font-face {font-family: 'ActaDisplay-Book';src: url('webfonts/29C680_0_0.eot');src: url('webfonts/29C680_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/29C680_0_0.woff') format('woff'),url('webfonts/29C680_0_0.ttf') format('truetype');}
+@font-face {font-family: 'ActaDisplay-Book';
+	src: url('fonts/29C680_0_0.eot');
+	src: url('fonts/29C680_0_0.eot?#iefix') format('embedded-opentype'),
+	url('fonts/29C680_0_0.woff') format('woff'),
+	url('fonts/29C680_0_0.ttf') format('truetype');
+}
  
