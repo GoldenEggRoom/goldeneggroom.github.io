@@ -23,7 +23,14 @@ angular.module('demo')
 
 
   $scope.trustSrc = function(src) {
-    return $sce.trustAsResourceUrl(src);
+    if(src && src.length)
+    {
+      return $sce.trustAsResourceUrl(src);
+    }
+    else
+    {
+      return $sce.trustAsResourceUrl("about:blank");
+    }
   }
 
 

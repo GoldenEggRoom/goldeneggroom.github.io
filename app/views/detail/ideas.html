@@ -1,11 +1,11 @@
 <div class="row-fluid">
 	<div class="row-fluid width-padding top-padding bottom-padding">
-		<div class="featured-idea" >
+		<div class="row-fluid span12 featured-idea" >
 
-			<iframe  ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+			<iframe  ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen class="span9"></iframe>
 
 			<a class="next-link" ng-click="nextFeature()">Next Pitch</a>
-			<div class="description">
+			<div class="span3 description">
 				<div class="traction">
 					<h3>TRACTION</h3>
 					<span>{{featuredIdea.getTraction()}}</span>
@@ -14,53 +14,54 @@
 				<p>"{{featuredIdea.getSummary()}}"</p>
 			</div>
 		</div>
-		<div class="pull-left span6">
-			<h3>New</h3>
-			<div class="row-fluid white-back withShadow withRadius center-align idea-link" 
-				ng-repeat="item in ideasCtrl.collection.models"
-				ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }" >
-				<a href="#/ideas/{{item.id}}"
-					class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top">
-					<div class="traction">
-							<label>TRACTION</label>
-							<span>{{item.getTraction()}}</span>
+		<div class="row-fluid">
+			<div class="pull-left span6">
+				<h3>New</h3>
+				<div class="row-fluid white-back withShadow withRadius center-align idea-link" 
+					ng-repeat="item in ideasCtrl.collection.models"
+					ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }" >
+					<a href="#/ideas/{{item.id}}"
+						class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top">
+						<div class="traction">
+								<label>TRACTION</label>
+								<span>{{item.getTraction()}}</span>
+							</div>
+						<div class="title" >
+							
+							<h3>{{item.getTitle()}}</h3>
+							<div class="summary">
+								<span class="small-left-margin machine">{{item.getSummary()}}</span>
+							</div>	
 						</div>
-					<div class="title" >
-						
-						<h3>{{item.getTitle()}}</h3>
-						<div class="summary">
-							<span class="small-left-margin machine">{{item.getSummary()}}</span>
-						</div>	
-					</div>
-				</a>
+					</a>
+
+				</div>
 
 			</div>
-
-		</div>
-		<div class="pull-right span6">
-			<h3>Recent</h3>
-			<div class="row-fluid white-back withShadow withRadius center-align idea-link" 
-				ng-repeat="item in ideasCtrl.collection.models"
-				ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }" 
-				ng-fil>
-				<a href="#/ideas/{{item.id}}"
-					class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top">
-					<div class="traction">
-							<label>TRACTION</label>
-							<span>{{item.getTraction()}}</span>
+			<div class="pull-right span6">
+				<h3>Recent</h3>
+				<div class="row-fluid white-back withShadow withRadius center-align idea-link" 
+					ng-repeat="item in ideasCtrl.collection.models"
+					ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }" 
+					ng-fil>
+					<a href="#/ideas/{{item.id}}"
+						class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top">
+						<div class="traction">
+								<label>TRACTION</label>
+								<span>{{item.getTraction()}}</span>
+							</div>
+						<div class="title" >
+							
+							<h3>{{item.getTitle()}}</h3>
+							<div class="summary">
+								<span class="small-left-margin machine">{{item.getSummary()}}</span>
+							</div>	
 						</div>
-					<div class="title" >
-						
-						<h3>{{item.getTitle()}}</h3>
-						<div class="summary">
-							<span class="small-left-margin machine">{{item.getSummary()}}</span>
-						</div>	
-					</div>
-				</a>
+					</a>
 
+				</div>
 			</div>
 		</div>
-		
 		
 	</div>
 	<div class="row-fluid" ng-include src="'app/views/footer.html'"></div>		
