@@ -10,53 +10,35 @@ angular.module('facebook')
   };
 
   $scope.asEducator = function () {
-      goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-          var user = goldenEggUser.models[0];
-
-          goldenEggUsers.addGoldenEggUser(user.getUserId(), user.getFacebookId(), null, 'educator', user.getFirstName(), user.getLastName(), user.getPicture());
-          goldenEggUsers.removeGoldenEggUser(user);
+      Parse.User.current().fetch().then(function (user) {
+          user.save({
+              role: 'educator'
+          });
           window.location = "#/";
       });
   };
 
   $scope.asDeveloper = function () {
-      goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-          var user = goldenEggUser.models[0];
-
-          goldenEggUsers.addGoldenEggUser(user.getUserId(), user.getFacebookId(), null, 'developer', user.getFirstName(), user.getLastName(), user.getPicture());
-          goldenEggUsers.removeGoldenEggUser(user);
+      Parse.User.current().fetch().then(function (user) {
+          user.save({
+              role: 'developer'
+          });
           window.location = "#/";
       });
   }
 
-  if (Parse.User.current()) {
-      $scope.facebookCtrl.fbAuthData = Parse.User.current().get('authData');
-      
-      goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-          if (goldenEggUser.models.length == 0) {
-              $scope.fbConnect();
-          }
-          var userInfo = goldenEggUser.models[0];
-          Parse.User.current().facebookId = userInfo.getFacebookId();
-          Parse.User.current().firstName = userInfo.getFirstName();
-          Parse.User.current().lastName = userInfo.getLastName();
-          Parse.User.current().picture = userInfo.getPicture();
-
-          $('.user-name').html('Welcome ' + (userInfo.getRole()? userInfo.getRole(): '') + ' ' + userInfo.getFirstName() + ' ' + userInfo.getLastName() + '!');
-
-          $('.user-pic').css('background-image', 'url("' + userInfo.getPicture() + '")');
-
+  if (Parse.User.current() && $('.lnk-login').is(':visible')) {
+      Parse.User.current().fetch().then(function (user) {
+          $rootScope.user = {};
+          $rootScope.user.facebookId = user.get('facebookId');
+          $rootScope.user.firstName = user.get('firstName');
+          $rootScope.user.lastName = user.get('lastName');
+          $rootScope.user.picture = user.get('pictureUrl');
+          $rootScope.user.role = user.get('role');
+          $('.user-name').html('Welcome! ' + $rootScope.user.firstName + ' ' + $rootScope.user.lastName + '');
+          $('.user-pic').css('background-image', 'url("' + $rootScope.user.picture + '")');
           $('.lnk-login').hide();
-
           $('.user-info').show();
-          var userInfo = goldenEggUser.models[0].attributes;
-          if (!userInfo['role']) {
-              window.location = "#/facebook/role";
-              return;
-          } else {
-              window.location = "#/";
-
-          }
       });
   }
       
@@ -71,7 +53,6 @@ angular.module('facebook')
                   {
 
                       success: function (user) {
-                          debugger;
                           var userId = user.id;
                           FB.api("/me", function (response) {
                              
@@ -82,24 +63,17 @@ angular.module('facebook')
                                   FB.api(
                                       "/me/picture",
                                       function (response) {
+                                          Parse.User.current().fetch().then(function (user) {
+                                              var picture = response.data.url;
 
-                                          var picture = response.data.url;
-                                          if (response && !response.error) {
-                                              goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-
-                                                  if (goldenEggUser.models.length == 0) {
-                                                      goldenEggUsers.addGoldenEggUser(userId, facebookId, null, null, firstName, lastName, picture);
-                                                      window.location = "#/facebook/role";
-                                                  } else if (goldenEggUser.models[0].getRole()) {
-                                                      window.location = "#/facebook/role";
-                                                  } else {
-                                                      window.location = "#/";
-
-                                                  }
-                                                  
+                                              user.save({
+                                                  pictureUrl: picture,
+                                                  firstName: firstName,
+                                                  lastName: lastName,
+                                                  facebookId: facebookId
                                               });
-
-                                          }
+                                              window.location = "#/facebook/role";
+                                          });
                                       }
                                     );
 

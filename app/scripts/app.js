@@ -22,9 +22,21 @@ angular.module('app', ['ui.router.compat' /* this is for ui-router */, 'ngAnimat
 }])
 
 .run(['ParseSDK', 'ExtendParseSDK', '$rootScope', '$state', '$stateParams','$location', function(ParseService, ExtendParseSDK, $rootScope, $state, $stateParams, $location) {
+    $rootScope.user = {};
     if (Parse.User.current()) {
-        $location.path('/facebook');
+        Parse.User.current().fetch().then(function (user) {
+            $rootScope.user.facebookId = user.get('facebookId');
+            $rootScope.user.firstName = user.get('firstName');
+            $rootScope.user.lastName = user.get('lastName');
+            $rootScope.user.picture = user.get('pictureUrl');
+            $rootScope.user.role = user.get('role');
+            $('.user-name').html('Welcome! ' + $rootScope.user.firstName + ' ' + $rootScope.user.lastName + '');
+            $('.user-pic').css('background-image', 'url("' + $rootScope.user.picture + '")');
+            $('.lnk-login').hide();
+            $('.user-info').show();
+        });
     }
+    
 	// Parse is initialised by injecting the ParseService into the Angular app
 	$rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
