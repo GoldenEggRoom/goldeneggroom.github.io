@@ -15,6 +15,8 @@ angular.module('demo')
 
   $scope.detailCtrl.editCurrent = {
     title: null,
+    tout: null,
+    target: null,
     summary: null,
     pitchVideoUrl: null
   }
@@ -22,6 +24,8 @@ angular.module('demo')
   if ($scope.detailCtrl.current) {
     $scope.detailCtrl.editCurrent.title = $scope.detailCtrl.current.getTitle()
     $scope.detailCtrl.editCurrent.summary = $scope.detailCtrl.current.getSummary()
+    $scope.detailCtrl.editCurrent.tout = $scope.detailCtrl.current.getTout()
+    $scope.detailCtrl.editCurrent.target = $scope.detailCtrl.current.getTarget()
     $scope.detailCtrl.editCurrent.pitchVideoUrl = $scope.detailCtrl.current.getPitchVideoUrl()
   }
 
@@ -30,6 +34,8 @@ angular.module('demo')
     // set the new attributes
     $scope.detailCtrl.current.setTitle($scope.detailCtrl.editCurrent.title);
     $scope.detailCtrl.current.setSummary($scope.detailCtrl.editCurrent.summary);
+    $scope.detailCtrl.current.setTout($scope.detailCtrl.editCurrent.tout);
+    $scope.detailCtrl.current.setTarget($scope.detailCtrl.editCurrent.target);
     $scope.detailCtrl.current.setPitchVideoUrl($scope.detailCtrl.editCurrent.pitchVideoUrl);
 
     // perform the save
@@ -51,7 +57,7 @@ angular.module('demo')
   $scope.detailCtrl.createIdea = function() {
 
     // set the new attributes
-    $scope.ideasCtrl.collection.addIdea($scope.detailCtrl.editCurrent.title, $scope.detailCtrl.editCurrent.summary, function(data) {
+    $scope.ideasCtrl.collection.addIdea($scope.detailCtrl.editCurrent.title, $scope.detailCtrl.editCurrent.tout, $scope.detailCtrl.editCurrent.target, function(data) {
       $location.path('/ideas/' + data.id + '/edit')
     })
 

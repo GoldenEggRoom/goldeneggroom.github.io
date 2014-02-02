@@ -102,17 +102,19 @@ angular.module('ExternalDataServices')
 		getVolunteers: function() {
 			return this.get('devCommitment') + this.get('designCommitment') + this.get('educatorCommitment');
 		},
+<<<<<<< HEAD
 		getTout: function(tout) {
 			return this.get('tout');
 		},
 		getTarget: function(target) {
 			return this.get('target');
-		},
+=======
 		getCreatedAt: function() {
 			return this.get('createdAt');
 		},
 		getUpdateAt: function() {
 			return this.get('updateAt');
+>>>>>>> f5e0145dbfaf7256af2350c779ec078a7cb0a0b1
 		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});

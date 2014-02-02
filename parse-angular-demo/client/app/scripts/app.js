@@ -21,8 +21,10 @@ angular.module('app', ['ui.router.compat' /* this is for ui-router */, 'ngAnimat
 
 }])
 
-.run(['ParseSDK', 'ExtendParseSDK', '$rootScope', '$state', '$stateParams', function(ParseService, ExtendParseSDK, $rootScope,   $state,   $stateParams) {
-
+.run(['ParseSDK', 'ExtendParseSDK', '$rootScope', '$state', '$stateParams','$location', function(ParseService, ExtendParseSDK, $rootScope, $state, $stateParams, $location) {
+    if (Parse.User.current()) {
+        $location.path('/facebook');
+    }
 	// Parse is initialised by injecting the ParseService into the Angular app
 	$rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;

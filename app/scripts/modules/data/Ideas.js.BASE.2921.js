@@ -54,14 +54,6 @@ angular.module('ExternalDataServices')
 			this.increment('developerVotes');
 			return this;
 		},
-		setTout: function (tout) {
-			this.set('tout', tout);
-			return this;
-		},
-		setTarget: function(target) {
-			this.set('target', target);
-			return this;
-		},
 		getOwner: function(owner) {
 			return this.get('owner');
 		},
@@ -102,18 +94,6 @@ angular.module('ExternalDataServices')
 		getVolunteers: function() {
 			return this.get('devCommitment') + this.get('designCommitment') + this.get('educatorCommitment');
 		},
-		getTout: function(tout) {
-			return this.get('tout');
-		},
-		getTarget: function(target) {
-			return this.get('target');
-		},
-		getCreatedAt: function() {
-			return this.get('createdAt');
-		},
-		getUpdateAt: function() {
-			return this.get('updateAt');
-		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}
@@ -124,15 +104,13 @@ angular.module('ExternalDataServices')
 		comparator: function(model) {
 			return -model.createdAt.getTime();
 		},
-		addIdea: function(title, tout, target, complete) {
+		addIdea: function(title, summary, complete) {
 	 		// save request_id to Parse
 	 		var _this = this;
 
 			var idea = new Idea;
 			idea.setTitle(title);
-			idea.setSummary('');
-			idea.setTout(tout);
-			idea.setTarget(target);
+			idea.setSummary(summary);
 			idea.setDevCommitment(0);
 			idea.setDesignCommitment(0);
 			idea.setEducatorCommitment(0);
