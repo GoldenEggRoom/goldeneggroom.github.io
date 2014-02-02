@@ -24,15 +24,21 @@
 
 					<form name="editForm" class="form-horizontal" novalidate>
 					  <div class="control-group">
-					    <label class="control-label" for="inputTitle">Problem Statement</label>
+					    <label class="control-label" for="inputTitle">Title</label>
 					    <div class="controls">
 					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.title" placeholder="Title" required>
 					    </div>
 					  </div>
 					  <div class="control-group">
-					    <label class="control-label" for="inputSummary">Problem Summary</label>
+					    <label class="control-label" for="inputTout">Tweetable</label>
 					    <div class="controls">
-					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.summary" placeholder="Summary" required>
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.tout" placeholder="140 chars or less" required>
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputTarget">Target Audience</label>
+					    <div class="controls">
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.target" placeholder="Target" required>
 					    </div>
 					  </div>
 					  <div class="control-group">
