@@ -44,32 +44,14 @@
 			
 		</div>
 		<div class="span3 row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align">
-			<h4 class="punchy">Traction ({{detailCtrl.current.getTraction()}})</h4>
-			<table>
-				<tr>
-					<td>{{detailCtrl.current.getVotes()}}</td>
-					<td>votes</td>
-				</tr>
-				<tr>
-					<td>{{detailCtrl.current.getEducatorCommitment()}}</td>
-					<td>educators committed</td>
-				</tr>
-				<tr>
-					<td>{{detailCtrl.current.getDevCommitment()}}</td>
-					<td>developers committed</td>
-				</tr>				
-				<tr>
-					<td>{{detailCtrl.current.getDesignCommitment()}}</td>
-					<td>designers committed</td>
-				</tr>
-				<tr>
-					<td>${{detailCtrl.current.getMonetaryCommitment()}}.00</td>
-					<td>committed</td>
-				</tr>
-			</table>
-			<br />
-			<button ng-click="detailCtrl.vote()" class="btn btn-block btn-large btn-success">Vote Up!</button>
-			<button class="btn btn-block btn-large btn-success">Commit!</button>
+			<div style="margin-bottom:15px;">
+				<h3><span style="display:block;">{{detailCtrl.current.getEducatorVotes()}}</span>Educator Endorsements</h3>
+				<button ng-click="detailCtrl.endorse()" class="btn btn-block btn-large btn-success">+ Endorse</button>
+			</div>
+			<div>
+				<h3><span style="display:block;">{{detailCtrl.current.getDeveloperVotes()}}</span>Technologists</h3>
+				<button ng-click="detailCtrl.volunteer()" class="btn btn-block btn-large btn-success">+ Volunteer</button>
+			</div>			
 		</div>
 	</div>
 	<div class="row-fluid" ng-include src="'app/views/footer.html'"></div>		

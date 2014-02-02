@@ -91,6 +91,9 @@ angular.module('ExternalDataServices')
 		getVotes: function() {
 			return this.get('developerVotes') + this.get('educatorVotes');
 		},
+		getVolunteers: function() {
+			return this.get('devCommitment') + this.get('designCommitment') + this.get('educatorCommitment');
+		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}
