@@ -7,13 +7,9 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/about.html',
-    "<section class=jumbotron><h1>Welcome!</h1><p class=lead>You're ready to start working on your next Parse AngularJS app!</p><a ng-click=createMonster() class=\"btn btn-secondary\">Create Monster</a><br>The New Monster ID is: {{ homeCtrl.monster.id }}</section><hr><div class=row-fluid><div class=\"npm packages span6\"><h3><a href=\"https://npmjs.org/\">NPM</a> Packages</h3><table class=\"table table-striped table-bordered table-hover table-condensed\"><tbody><tr ng-repeat=\"(module, version) in server.data.dependencies | orderBy:module\"><th><a ng-href=\"https://npmjs.org/package/{{ module }}\">{{ module }}</a></th><td class=text-right>{{ version }}</td></tr></tbody></table></div><div class=\"bower packages span6\"><h3><a href=\"http://bower.io/\">Bower</a> Packages</h3><pre>\r" +
-    "\n" +
-    "      \r" +
-    "\n" +
-    "      {{ client.data.dependencies }}\r" +
-    "\n" +
-    "\r" +
+    "<section class=jumbotron><h1>Welcome!</h1><p class=lead>You're ready to start working on your next Parse AngularJS app!</p><a ng-click=createMonster() class=\"btn btn-secondary\">Create Monster</a><br>The New Monster ID is: {{ homeCtrl.monster.id }}</section><hr><div class=row-fluid><div class=\"npm packages span6\"><h3><a href=\"https://npmjs.org/\">NPM</a> Packages</h3><table class=\"table table-striped table-bordered table-hover table-condensed\"><tbody><tr ng-repeat=\"(module, version) in server.data.dependencies | orderBy:module\"><th><a ng-href=\"https://npmjs.org/package/{{ module }}\">{{ module }}</a></th><td class=text-right>{{ version }}</td></tr></tbody></table></div><div class=\"bower packages span6\"><h3><a href=\"http://bower.io/\">Bower</a> Packages</h3><pre>\n" +
+    "      \n" +
+    "      {{ client.data.dependencies }}\n" +
     "\n" +
     "    </pre><table class=\"table table-striped table-bordered table-hover table-condensed\"><tbody><tr ng-repeat=\"(module, version) in client.data.dependencies\"><th>{{ module }}</th><td class=text-right>{{ version }}</td></tr></tbody></table></div></div>"
   );
@@ -30,12 +26,9 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/debug.html',
-    "<div class=\"row-fluid center-align\"><h5 class=\"machine bottom-margin muted\">ui-router states</h5></div><pre>\r" +
-    "\n" +
-    "$state = {{$state.current.name}}\r" +
-    "\n" +
-    "$stateParams = {{$stateParams}}\r" +
-    "\n" +
+    "<div class=\"row-fluid center-align\"><h5 class=\"machine bottom-margin muted\">ui-router states</h5></div><pre>\n" +
+    "$state = {{$state.current.name}}\n" +
+    "$stateParams = {{$stateParams}}\n" +
     "</pre>"
   );
 
@@ -81,236 +74,128 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/detail/features.list.cloud-code.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Angular Cloud Code Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-cloud small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">A Service to Wrap Parse Cloud Code Calls</h4></div></div></div><div class=\"row-fluid left-align muted\">We really love AngularJS. However, you often hit the WTF ZONE of Angular, especially when you try to update scope variables outside of the \"Angular Kingdom\". Since all your data will be pulled in asynchronously from Parse, you'll run in to this issue pretty quickly.<br><br>So we wrote <strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseCloudCodeAngular.js>ParseCloudCodeAngular</a></strong>, a simple AngularJS wrapper for the Parse.Cloud.run, saving even more boilerplate code. We're also using deferred promises, because they're awesome. This allows you to call Parse.Cloud.run, pass in any parameters, and it wraps the result in a promise <em>inside</em> the \"Angular Kingdom\". Here's an example:<em></em><br><br><pre>ParseCloudCodeAngular('customCloudCodeFunction',dataToSend);</pre><br>This single line of code calls Parse.Cloud.run, passes in your data and wraps the result in an AngularJS promise.<br><br>Here's how it works:<br><br><strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseQueryAngular.js>ParseCloudCodeAngular.js</a></strong><pre>angular.module('ParseServices')\r" +
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Angular Cloud Code Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-cloud small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">A Service to Wrap Parse Cloud Code Calls</h4></div></div></div><div class=\"row-fluid left-align muted\">We really love AngularJS. However, you often hit the WTF ZONE of Angular, especially when you try to update scope variables outside of the \"Angular Kingdom\". Since all your data will be pulled in asynchronously from Parse, you'll run in to this issue pretty quickly.<br><br>So we wrote <strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseCloudCodeAngular.js>ParseCloudCodeAngular</a></strong>, a simple AngularJS wrapper for the Parse.Cloud.run, saving even more boilerplate code. We're also using deferred promises, because they're awesome. This allows you to call Parse.Cloud.run, pass in any parameters, and it wraps the result in a promise <em>inside</em> the \"Angular Kingdom\". Here's an example:<em></em><br><br><pre>ParseCloudCodeAngular('customCloudCodeFunction',dataToSend);</pre><br>This single line of code calls Parse.Cloud.run, passes in your data and wraps the result in an AngularJS promise.<br><br>Here's how it works:<br><br><strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseQueryAngular.js>ParseCloudCodeAngular.js</a></strong><pre>angular.module('ParseServices')\n" +
     "\n" +
-    "\r" +
-    "\n" +
-    ".factory('ParseCloudCodeAngular',['$q','$timeout','ParseQueryAngular',function ($q, $timeout, ParseQueryAngular) { \r" +
-    "\n" +
-    "\treturn function(name,params) {\r" +
-    "\n" +
-    "    \treturn ParseQueryAngular(Parse.Cloud,{functionToCall:\"run\",params:[name,params]});\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
+    ".factory('ParseCloudCodeAngular',['$q','$timeout','ParseQueryAngular',function ($q, $timeout, ParseQueryAngular) { \n" +
+    "\treturn function(name,params) {\n" +
+    "    \treturn ParseQueryAngular(Parse.Cloud,{functionToCall:\"run\",params:[name,params]});\n" +
+    "  }\n" +
     "}]);</pre><br>Just a simple shortcut to keep your code DRY.</div></div><div class=top-margin><a href=#/features class=\"btn btn-block btn-secondary btn-large\">Back</a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
   $templateCache.put('app/views/detail/features.list.data.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">AngularJS & Backbone</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-heart small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">AngularJS + Backbone.js = <i class=\"icon icon-heart\"></i></h4><span class=muted>AngularJS for views, Backbone for models</span></div></div></div><div class=\"row-fluid left-align muted\">The awesome thing about the Parse Javascript SDK is that it's a fork of Backbone, so we can make use of the kickass Model and Collection architecture, but still use AngularJS for all UI events and views (this is where Backbone loses out to other frameworks).<br><br>The best way to stay organised is to separate each Parse Object definition into a separate file in a <strong>data</strong> folder. Each definition is a factory of an overall Angular module we have called 'ExternalDataServices' which you'll see is first declared above in #2. Extending the 'ExternalDataServices' module with new factories is easy, just leave out the square brackets. Here's what our folder structure looks like with this architecture.<br><br><pre>|-- app\r" +
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">AngularJS & Backbone</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-heart small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">AngularJS + Backbone.js = <i class=\"icon icon-heart\"></i></h4><span class=muted>AngularJS for views, Backbone for models</span></div></div></div><div class=\"row-fluid left-align muted\">The awesome thing about the Parse Javascript SDK is that it's a fork of Backbone, so we can make use of the kickass Model and Collection architecture, but still use AngularJS for all UI events and views (this is where Backbone loses out to other frameworks).<br><br>The best way to stay organised is to separate each Parse Object definition into a separate file in a <strong>data</strong> folder. Each definition is a factory of an overall Angular module we have called 'ExternalDataServices' which you'll see is first declared above in #2. Extending the 'ExternalDataServices' module with new factories is easy, just leave out the square brackets. Here's what our folder structure looks like with this architecture.<br><br><pre>|-- app\n" +
+    "  |-- scripts\n" +
+    "    |-- modules\n" +
+    "      |-- data\n" +
+    "        // this is where all your model definitions \n" +
+    "        |-- Monster.js</pre>And this is what a Parse Object definition would look like:<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/modules/data/Monsters.js>Monsters.js</a></strong><pre>// Monster.js\n" +
     "\n" +
-    "  |-- scripts\r" +
+    "// reference the module we declared earlier\n" +
+    "angular.module('ExternalDataServices')\n" +
     "\n" +
-    "    |-- modules\r" +
+    "// add a factory\n" +
+    ".factory('MonsterService', ['ParseQueryAngular', function(ParseQueryAngular) {\n" +
     "\n" +
-    "      |-- data\r" +
+    "  // use the extendAngular instead of just extend to gain enhanced Angular functionality\n" +
     "\n" +
-    "        // this is where all your model definitions \r" +
+    "  var Monster = Parse.Object.extendAngular({\n" +
+    "    className:\"Monster\",\n" +
+    "    setScaryMove: function(move) {\n" +
+    "      this.set('scaryMove',move);\n" +
+    "      return this;\n" +
+    "    }\n" +
+    "  });\n" +
+    "  \n" +
     "\n" +
-    "        |-- Monster.js</pre>And this is what a Parse Object definition would look like:<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/modules/data/Monsters.js>Monsters.js</a></strong><pre>// Monster.js\r" +
+    "  // use the extendAngular instead of just extend to gain enhanced Angular functionality\n" +
     "\n" +
-    "\r" +
+    "  var Monsters = Parse.Collection.extendAngular({\n" +
+    "    model: Monster,\n" +
+    "    loadMonstersWithMove: function(move) {\n" +
+    "      this.query = (new Parse.Query(Monster));\n" +
     "\n" +
-    "// reference the module we declared earlier\r" +
+    "      // use the enhanced load() function to fetch the collection\n" +
+    "      return this.load();\n" +
+    "    }\n" +
+    "  });\n" +
     "\n" +
-    "angular.module('ExternalDataServices')\r" +
+    "  // Return a simple API : model or collection.\n" +
+    "  return {\n" +
+    "    model: Monster,\n" +
+    "    collection: Monsters\n" +
+    "  }\n" +
     "\n" +
-    "\r" +
+    "}])</pre><br>Now wherever we need a Monster model or collection, like in the directive below, we can instantiate it using the MonsterService like this:<br><br><pre>// SomeDirective.js\n" +
     "\n" +
-    "// add a factory\r" +
+    "// inject the MonsterService into your directive\n" +
     "\n" +
-    ".factory('MonsterService', ['ParseQueryAngular', function(ParseQueryAngular) {\r" +
+    "angular.module('foo',[]).directive('bar',['MonsterService',function(\n" +
     "\n" +
-    "\r" +
+    "  return {\n" +
+    "    controller: ['$scope','$element','$attrs', function($scope, $element, $attrs) {\n" +
     "\n" +
-    "  // use the extendAngular instead of just extend to gain enhanced Angular functionality\r" +
+    "      // new up a collection so we can use it to perform a query\n" +
+    "      var monsters = new MonsterService.collection;\n" +
     "\n" +
-    "\r" +
+    "      // perform the Parse.Query\n" +
+    "      $scope.monsters = monsters.loadMonstersWithMove('fireBreath');\n" +
     "\n" +
-    "  var Monster = Parse.Object.extendAngular({\r" +
+    "      // and remember its a promise, so we can add synchronous logic here with a .then()\n" +
     "\n" +
-    "    className:\"Monster\",\r" +
-    "\n" +
-    "    setScaryMove: function(move) {\r" +
-    "\n" +
-    "      this.set('scaryMove',move);\r" +
-    "\n" +
-    "      return this;\r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    "  });\r" +
-    "\n" +
-    "  \r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  // use the extendAngular instead of just extend to gain enhanced Angular functionality\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  var Monsters = Parse.Collection.extendAngular({\r" +
-    "\n" +
-    "    model: Monster,\r" +
-    "\n" +
-    "    loadMonstersWithMove: function(move) {\r" +
-    "\n" +
-    "      this.query = (new Parse.Query(Monster));\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      // use the enhanced load() function to fetch the collection\r" +
-    "\n" +
-    "      return this.load();\r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    "  });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  // Return a simple API : model or collection.\r" +
-    "\n" +
-    "  return {\r" +
-    "\n" +
-    "    model: Monster,\r" +
-    "\n" +
-    "    collection: Monsters\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "}])</pre><br>Now wherever we need a Monster model or collection, like in the directive below, we can instantiate it using the MonsterService like this:<br><br><pre>// SomeDirective.js\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "// inject the MonsterService into your directive\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "angular.module('foo',[]).directive('bar',['MonsterService',function(\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  return {\r" +
-    "\n" +
-    "    controller: ['$scope','$element','$attrs', function($scope, $element, $attrs) {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      // new up a collection so we can use it to perform a query\r" +
-    "\n" +
-    "      var monsters = new MonsterService.collection;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      // perform the Parse.Query\r" +
-    "\n" +
-    "      $scope.monsters = monsters.loadMonstersWithMove('fireBreath');\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      // and remember its a promise, so we can add synchronous logic here with a .then()\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    "  }]\r" +
-    "\n" +
-    "\r" +
+    "    }\n" +
+    "  }]\n" +
     "\n" +
     "}])</pre><br>A great side-effect of injecting your Parse data services only when you need it is that AngularJS's awesome dependency injection system knows when to remove this stuff from memory. Also, if you build your app in a modular way, in Angular 2.0 you will also be able to take advantage of lazy loading modules which will speed up the load-time of your app tremendously.</div></div><div class=top-margin><a href=#/features class=\"btn btn-block btn-secondary btn-large\">Back</a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
   $templateCache.put('app/views/detail/features.list.facebook.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Parse & Facebook SDK</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-facebook-sign small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">Use a Promise to Init Parse.FacebookUtils</h4><span class=muted>Allowing you to asynchronously Load the Parse SDK and the Facebook SDK</span></div></div></div><div class=\"row-fluid left-align muted\">We all know that we should asynchronously load the Facebook SDK near the closing <span class=bold>body</span> tag to speed up page loads. We load the Parse SDK here too instead of in the <span class=bold>head</span>for the same reason. But if you try to<span class=bold></span>asynchronously load the <span class=bold>Parse SDK and Facebook SDK</span> you will run into the problem where Parse will try to call FB.init() at some point, and the FB object does not exist because the Facebook SDK has not yet loaded.<br><br>We developed an clever way to get around this. The key thing here is that Facebook calls a function <span class=bold>window.fbAsyncInit</span> as soon as the SDK is finished loading. We use this to resolve the <span class=bold>window.fbPromise</span>, which in turn is used to trigger <span class=bold>Parse.FacebookUtils.init()</span>. This method is flawless, and you never get any out of sync errors. Here's the code to define the <span class=bold>fbPromise</span>:<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/index.html>index.html</a></strong><pre>\r" +
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Parse & Facebook SDK</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-facebook-sign small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">Use a Promise to Init Parse.FacebookUtils</h4><span class=muted>Allowing you to asynchronously Load the Parse SDK and the Facebook SDK</span></div></div></div><div class=\"row-fluid left-align muted\">We all know that we should asynchronously load the Facebook SDK near the closing <span class=bold>body</span> tag to speed up page loads. We load the Parse SDK here too instead of in the <span class=bold>head</span>for the same reason. But if you try to<span class=bold></span>asynchronously load the <span class=bold>Parse SDK and Facebook SDK</span> you will run into the problem where Parse will try to call FB.init() at some point, and the FB object does not exist because the Facebook SDK has not yet loaded.<br><br>We developed an clever way to get around this. The key thing here is that Facebook calls a function <span class=bold>window.fbAsyncInit</span> as soon as the SDK is finished loading. We use this to resolve the <span class=bold>window.fbPromise</span>, which in turn is used to trigger <span class=bold>Parse.FacebookUtils.init()</span>. This method is flawless, and you never get any out of sync errors. Here's the code to define the <span class=bold>fbPromise</span>:<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/index.html>index.html</a></strong><pre>\n" +
     "\n" +
-    "\r" +
+    "  var fbDeferred = $.Deferred();\n" +
+    "  window.fbPromise = fbDeferred.promise();\n" +
+    "  window.fbAsyncInit = function() {\n" +
+    "    fbDeferred.resolve();\n" +
+    "  };\n" +
     "\n" +
-    "  var fbDeferred = $.Deferred();\r" +
-    "\n" +
-    "  window.fbPromise = fbDeferred.promise();\r" +
-    "\n" +
-    "  window.fbAsyncInit = function() {\r" +
-    "\n" +
-    "    fbDeferred.resolve();\r" +
-    "\n" +
-    "  };\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "</pre><br>... and here's the code to subsequently trigger the init()<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseServices.js>ParseServices.js</a></strong><pre>\r" +
-    "\n" +
-    "// FACEBOOK init\r" +
-    "\n" +
-    "window.fbPromise.then(function() {\r" +
-    "\n" +
-    "  Parse.FacebookUtils.init({\r" +
-    "\n" +
-    "    appId: /*** FB APP ID ***/, \r" +
-    "\n" +
-    "    channelUrl: /*** HTTP://YOURDOMAIN.COM/ ***/channel.html',\r" +
-    "\n" +
-    "    cookie: true, // enable cookies to allow Parse to access the session\r" +
-    "\n" +
-    "    xfbml: true, // parse XFBML\r" +
-    "\n" +
-    "    frictionlessRequests: true // recommended\r" +
-    "\n" +
-    "  });\r" +
-    "\n" +
-    "});\r" +
-    "\n" +
+    "</pre><br>... and here's the code to subsequently trigger the init()<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseServices.js>ParseServices.js</a></strong><pre>\n" +
+    "// FACEBOOK init\n" +
+    "window.fbPromise.then(function() {\n" +
+    "  Parse.FacebookUtils.init({\n" +
+    "    appId: /*** FB APP ID ***/, \n" +
+    "    channelUrl: /*** HTTP://YOURDOMAIN.COM/ ***/channel.html',\n" +
+    "    cookie: true, // enable cookies to allow Parse to access the session\n" +
+    "    xfbml: true, // parse XFBML\n" +
+    "    frictionlessRequests: true // recommended\n" +
+    "  });\n" +
+    "});\n" +
     "</pre>Simple, elegant, highly effective.</div></div><div class=top-margin><a href=#/features class=\"btn btn-block btn-secondary btn-large\">Back</a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
   $templateCache.put('app/views/detail/features.list.facebookSDK.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Facebook API Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-facebook-sign small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius top-margin top-padding bottom-padding width-padding\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">FB.api wrapped in an Angular Promise</h4><span class=muted>Extending the Facebook JavaScript SDK with FB.apiAngular</span></div></div></div><div class=\"row-fluid left-align muted\">So what did we do <a href=#/facebook>here</a>? We made it an actual joy to work with the Facebook API.<br><br><span class=bold>1. Wrapped all FB.api calls in an AngularJS promise</span><br>For the same reason we need to wrap all Parse calls in an Angular promise, we need to do it with all <span class=bold>FB.api</span> calls too.<br><br>This is because <span class=bold>FB.api</span> performs requests outside the Angular kingdom. We took inspiration from our Parse wrapper and created a similar one for <span class=bold>FB.api</span>.<br><br><span class=bold>2. Extended Facebook JS SDK with FB.apiAngular</span><br>So after creating a cleanly wrapped Angular promise for <span class=bold>FB.api</span>, we gave ourselves access to it by extended the Facebook SDK with the <span class=bold>FB.apiAngular</span> method. Now, instead of calling <span class=bold>FB.api</span>, you just call <span class=bold>FB.apiAngular</span>, and you get to use the Facebook SDK with promises!<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/controllers/facebook-example.js>facebook-example.js</a></strong><pre>\r" +
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Facebook API Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-facebook-sign small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius top-margin top-padding bottom-padding width-padding\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">FB.api wrapped in an Angular Promise</h4><span class=muted>Extending the Facebook JavaScript SDK with FB.apiAngular</span></div></div></div><div class=\"row-fluid left-align muted\">So what did we do <a href=#/facebook>here</a>? We made it an actual joy to work with the Facebook API.<br><br><span class=bold>1. Wrapped all FB.api calls in an AngularJS promise</span><br>For the same reason we need to wrap all Parse calls in an Angular promise, we need to do it with all <span class=bold>FB.api</span> calls too.<br><br>This is because <span class=bold>FB.api</span> performs requests outside the Angular kingdom. We took inspiration from our Parse wrapper and created a similar one for <span class=bold>FB.api</span>.<br><br><span class=bold>2. Extended Facebook JS SDK with FB.apiAngular</span><br>So after creating a cleanly wrapped Angular promise for <span class=bold>FB.api</span>, we gave ourselves access to it by extended the Facebook SDK with the <span class=bold>FB.apiAngular</span> method. Now, instead of calling <span class=bold>FB.api</span>, you just call <span class=bold>FB.apiAngular</span>, and you get to use the Facebook SDK with promises!<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/controllers/facebook-example.js>facebook-example.js</a></strong><pre>\n" +
     "\n" +
-    "\r" +
+    "  $scope.exampleCall = function() {\n" +
     "\n" +
-    "  $scope.exampleCall = function() {\r" +
+    "    FB.apiAngular(\n" +
+    "      '/me/apprequests',\n" +
+    "      { message: 'From the app to the user.' },\n" +
+    "      'POST')\n" +
     "\n" +
-    "\r" +
+    "    .then(function(data) {\n" +
     "\n" +
-    "    FB.apiAngular(\r" +
+    "      alert('done'); console.log(data)\n" +
+    "    \n" +
+    "    }, function(error) {\n" +
+    "    \n" +
+    "    $scope.facebookCtrl.response = error.message;\n" +
+    "  \n" +
+    "  });\n" +
     "\n" +
-    "      '/me/apprequests',\r" +
-    "\n" +
-    "      { message: 'From the app to the user.' },\r" +
-    "\n" +
-    "      'POST')\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    .then(function(data) {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      alert('done'); console.log(data)\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "    }, function(error) {\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "    $scope.facebookCtrl.response = error.message;\r" +
-    "\n" +
-    "  \r" +
-    "\n" +
-    "  });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
+    "  }\n" +
     "\n" +
     "</pre><br><br>Check out <strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/FacebookAngularPatch.js>FacebookAngularPatch.js</a></strong> to see exactly how we extended the FB SDK with the FB.apiAngular method.</div></div><div class=top-margin><a href=#/features class=\"btn btn-block btn-secondary btn-large\">Back</a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
@@ -322,208 +207,109 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/detail/features.list.parse-sdk.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Extend Parse SDK</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-cogs small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">Give Parse AngularJS Superpowers</h4><span class=muted>Extending Parse.Object gives all your Parse data load() and save() methods auto wrapping them in AngularJS promises</span></div></div></div><div class=\"row-fluid left-align muted\">With the simple code below, we beefed up all our Parse objects and collections with enhanced functionality, allowing us to save and load any Parse.Object or Parse.Collection inside the AngularJS digest with finesse.<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseServices.js>ParseServices.js</a></strong><pre>\r" +
-    "\n" +
-    "  Parse.Object.extendAngular = function(options) {\r" +
-    "\n" +
-    "    return ParseAbstractService.EnhanceObject(Parse.Object.extend(options));\r" +
-    "\n" +
-    "  };\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  Parse.Collection.extendAngular = function(options) {\r" +
-    "\n" +
-    "    return ParseAbstractService.EnhanceCollection(Parse.Collection.extend(options));\r" +
-    "\n" +
-    "  };\r" +
-    "\n" +
-    "</pre><br>It doesn't take a genius to notice that this requires something we called ParseAbstractService, which is a simple bit of code that adds the Parse.Object and Parse.Collection methods.<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/modules/data/_ParseObjects.js>_ParseObjects.js</a></strong><pre>angular.module('ExternalDataServices',[])\r" +
-    "\n" +
-    ".factory('ParseAbstractService', ['ParseQueryAngular', function(ParseQueryAngular) {\r" +
-    "\n" +
-    " /********\r" +
-    "\n" +
-    " This service provides an enhanced Parse.Object and Parse.Collection\r" +
-    "\n" +
-    " So we can call load and saveParse from any extending Class and have that wrapped\r" +
-    "\n" +
-    " within ParseQueryAngular\r" +
-    "\n" +
-    " **********/\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  var object = function(originalClass) {\r" +
-    "\n" +
-    "    originalClass.prototype = _.extend(originalClass.prototype,{\r" +
-    "\n" +
-    "      load:function() {\r" +
-    "\n" +
-    "        return ParseQueryAngular(this,{functionToCall:\"fetch\"});\r" +
-    "\n" +
-    "      },\r" +
-    "\n" +
-    "      saveParse:function(data) {\r" +
-    "\n" +
-    "        if (data &amp;&amp; typeof data == \"object\") this.set(data);\r" +
-    "\n" +
-    "        return ParseQueryAngular(this,{functionToCall:\"save\", params:[null]});\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "    });\r" +
-    "\n" +
-    "   return originalClass;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  var collection = function(originalClass){\r" +
-    "\n" +
-    "    originalClass.prototype = _.extend(originalClass.prototype,{\r" +
-    "\n" +
-    "      load:function() {\r" +
-    "\n" +
-    "        return ParseQueryAngular(this,{functionToCall:\"fetch\"});\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "    });\r" +
-    "\n" +
-    "    return originalClass;\r" +
-    "\n" +
-    "  };\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  return {\r" +
-    "\n" +
-    "    EnhanceObject:object,\r" +
-    "\n" +
-    "    EnhanceCollection:collection\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "}]);</pre><br>We can now make use of these new methods on any models or collections that extend Parse.Object.extendAngular or Parse.Collection.extendAngular, like so:<br><br><pre>// =============\r" +
-    "\n" +
-    "// new way using enhanced Parse.Object\r" +
-    "\n" +
-    "// =============\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "var collection = new TestCollection();\r" +
-    "\n" +
-    "collection.load();</pre><br>For a clearer idea of how much more awesome this is, below is the old way:<br><br><pre>// ============\r" +
-    "\n" +
-    "// old way\r" +
-    "\n" +
-    "// ============\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "var collection = new TestCollection();\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "var defer = $q.defer();\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "// fetch all models\r" +
-    "\n" +
-    "collection.fetch({\r" +
-    "\n" +
-    "  success: function(result) {\r" +
-    "\n" +
-    "    $rootScope.$apply(function() {\r" +
-    "\n" +
-    "      defer.resolve(result);\r" +
-    "\n" +
-    "  },\r" +
-    "\n" +
-    "  error: function(error) {\r" +
-    "\n" +
-    "    $rootScope.$apply(function() {\r" +
-    "\n" +
-    "      defer.reject(error);\r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "});\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "defer.promise.then(function(data) {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  collection = data;\r" +
-    "\n" +
-    "  // now, finally the collection is ready to use in AngularJS\r" +
-    "\n" +
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Extend Parse SDK</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-cogs small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">Give Parse AngularJS Superpowers</h4><span class=muted>Extending Parse.Object gives all your Parse data load() and save() methods auto wrapping them in AngularJS promises</span></div></div></div><div class=\"row-fluid left-align muted\">With the simple code below, we beefed up all our Parse objects and collections with enhanced functionality, allowing us to save and load any Parse.Object or Parse.Collection inside the AngularJS digest with finesse.<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseServices.js>ParseServices.js</a></strong><pre>\n" +
+    "  Parse.Object.extendAngular = function(options) {\n" +
+    "    return ParseAbstractService.EnhanceObject(Parse.Object.extend(options));\n" +
+    "  };\n" +
+    "\n" +
+    "  Parse.Collection.extendAngular = function(options) {\n" +
+    "    return ParseAbstractService.EnhanceCollection(Parse.Collection.extend(options));\n" +
+    "  };\n" +
+    "</pre><br>It doesn't take a genius to notice that this requires something we called ParseAbstractService, which is a simple bit of code that adds the Parse.Object and Parse.Collection methods.<br><br><strong><a target=_blank href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/modules/data/_ParseObjects.js>_ParseObjects.js</a></strong><pre>angular.module('ExternalDataServices',[])\n" +
+    ".factory('ParseAbstractService', ['ParseQueryAngular', function(ParseQueryAngular) {\n" +
+    " /********\n" +
+    " This service provides an enhanced Parse.Object and Parse.Collection\n" +
+    " So we can call load and saveParse from any extending Class and have that wrapped\n" +
+    " within ParseQueryAngular\n" +
+    " **********/\n" +
+    "\n" +
+    "  var object = function(originalClass) {\n" +
+    "    originalClass.prototype = _.extend(originalClass.prototype,{\n" +
+    "      load:function() {\n" +
+    "        return ParseQueryAngular(this,{functionToCall:\"fetch\"});\n" +
+    "      },\n" +
+    "      saveParse:function(data) {\n" +
+    "        if (data &amp;&amp; typeof data == \"object\") this.set(data);\n" +
+    "        return ParseQueryAngular(this,{functionToCall:\"save\", params:[null]});\n" +
+    "      }\n" +
+    "    });\n" +
+    "   return originalClass;\n" +
+    "  }\n" +
+    "\n" +
+    "  var collection = function(originalClass){\n" +
+    "    originalClass.prototype = _.extend(originalClass.prototype,{\n" +
+    "      load:function() {\n" +
+    "        return ParseQueryAngular(this,{functionToCall:\"fetch\"});\n" +
+    "      }\n" +
+    "    });\n" +
+    "    return originalClass;\n" +
+    "  };\n" +
+    "\n" +
+    "  return {\n" +
+    "    EnhanceObject:object,\n" +
+    "    EnhanceCollection:collection\n" +
+    "  }\n" +
+    "}]);</pre><br>We can now make use of these new methods on any models or collections that extend Parse.Object.extendAngular or Parse.Collection.extendAngular, like so:<br><br><pre>// =============\n" +
+    "// new way using enhanced Parse.Object\n" +
+    "// =============\n" +
+    "\n" +
+    "var collection = new TestCollection();\n" +
+    "collection.load();</pre><br>For a clearer idea of how much more awesome this is, below is the old way:<br><br><pre>// ============\n" +
+    "// old way\n" +
+    "// ============\n" +
+    "\n" +
+    "var collection = new TestCollection();\n" +
+    "\n" +
+    "var defer = $q.defer();\n" +
+    "\n" +
+    "// fetch all models\n" +
+    "collection.fetch({\n" +
+    "  success: function(result) {\n" +
+    "    $rootScope.$apply(function() {\n" +
+    "      defer.resolve(result);\n" +
+    "  },\n" +
+    "  error: function(error) {\n" +
+    "    $rootScope.$apply(function() {\n" +
+    "      defer.reject(error);\n" +
+    "    }\n" +
+    "  }\n" +
+    "});\n" +
+    "\n" +
+    "defer.promise.then(function(data) {\n" +
+    "\n" +
+    "  collection = data;\n" +
+    "  // now, finally the collection is ready to use in AngularJS\n" +
     "});</pre><br>Yuck! And you would have to repeat all that for every save or fetch!</div></div><div class=top-margin><a href=#/features class=\"btn btn-block btn-secondary btn-large\">Back</a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
   $templateCache.put('app/views/detail/features.list.parse.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Parse Angular Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-cloud small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">A Service to Wrap All Parse Calls</h4><span class=muted>Saving you from writing the same code over and over</span></div></div></div><div class=\"row-fluid left-align muted\">We really love AngularJS. However, you often hit the WTF ZONE of Angular, especially when you try to update scope variables outside of the \"Angular Kingdom\". Since all your data will be pulled in asynchronously from Parse, you'll run in to this issue pretty quickly.<br><br>So we wrote <strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseQueryAngular.js>ParseQueryAngular</a></strong>, a simple AngularJS wrapper for the Parse JS SDK, saving gazillions of lines of code (at least), and we're also using deferred promises, because they're awesome. This allows you to call any Parse API method on any Parse.Object, pass in any parameters, and it wraps the result in a promise <em>inside</em> the \"Angular Kingdom\". Here's an example:<em></em><br><br><pre>ParseQueryAngular(Parse.FacebookUtils,{functionToCall:\"link\", params:[user, \"email,user_likes,publish_actions\"]})</pre><br>This single line of code calls Parse.FacebookUtils.link to connect the current Parse User with their Facebook account, and passes in some parameters for permissions and wraps the result in an AngularJS promise.<br><br>If you're familiar with the Parse docs, you 'll notice something magical here: there is no need to write the same old success: and error: functions every time you make an API call to Parse.<br><br>If you're familiar with AngularJS you'll also notice something magical here: the result of the API call is automatically wrapped into the AngularJS digest for use within your $scope. No need to do any<strong>$scope.$apply</strong>nonsense. Here's another example that we do all the time:<br><br><pre>var user = new Parse.User();\r" +
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/features>Back</a><h1 class=\"human title\">Parse Angular Wrapper</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-cloud small-right-margin\"></i></h1></div></div><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=\"row-fluid bottom-margin\"><div class=\"row-fluid center-align\"><h4 class=\"punchy small-bottom-margin\">A Service to Wrap All Parse Calls</h4><span class=muted>Saving you from writing the same code over and over</span></div></div></div><div class=\"row-fluid left-align muted\">We really love AngularJS. However, you often hit the WTF ZONE of Angular, especially when you try to update scope variables outside of the \"Angular Kingdom\". Since all your data will be pulled in asynchronously from Parse, you'll run in to this issue pretty quickly.<br><br>So we wrote <strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseQueryAngular.js>ParseQueryAngular</a></strong>, a simple AngularJS wrapper for the Parse JS SDK, saving gazillions of lines of code (at least), and we're also using deferred promises, because they're awesome. This allows you to call any Parse API method on any Parse.Object, pass in any parameters, and it wraps the result in a promise <em>inside</em> the \"Angular Kingdom\". Here's an example:<em></em><br><br><pre>ParseQueryAngular(Parse.FacebookUtils,{functionToCall:\"link\", params:[user, \"email,user_likes,publish_actions\"]})</pre><br>This single line of code calls Parse.FacebookUtils.link to connect the current Parse User with their Facebook account, and passes in some parameters for permissions and wraps the result in an AngularJS promise.<br><br>If you're familiar with the Parse docs, you 'll notice something magical here: there is no need to write the same old success: and error: functions every time you make an API call to Parse.<br><br>If you're familiar with AngularJS you'll also notice something magical here: the result of the API call is automatically wrapped into the AngularJS digest for use within your $scope. No need to do any<strong>$scope.$apply</strong>nonsense. Here's another example that we do all the time:<br><br><pre>var user = new Parse.User();\n" +
     "\n" +
-    "\r" +
+    "user.set('username', 'spacenick');\n" +
+    "user.set('password', 'sp4c3n1ck');\n" +
+    "user.set('email','space@nick.com');\n" +
     "\n" +
-    "user.set('username', 'spacenick');\r" +
+    "ParseQueryAngular(user,{functionToCall:\"signUp\", params:[null]}).then(function(registeredUser) {\n" +
     "\n" +
-    "user.set('password', 'sp4c3n1ck');\r" +
+    "    // since we know that the result will be inside the Angular digest, we make use of Angular's two-way data binding and automatically update all our views by simply updating the user object\n" +
     "\n" +
-    "user.set('email','space@nick.com');\r" +
+    "    user = registeredUser;\n" +
     "\n" +
-    "\r" +
+    "    // we can even use it with Parse.Query\n" +
+    "    var query = new Parse.Query(MyObject);\n" +
+    "    query.include('myStuff').equalTo('someRandom','thing');\n" +
+    "    return ParseQueryAngular(query);\n" +
+    "}).then(function(queriedObj) {\n" +
     "\n" +
-    "ParseQueryAngular(user,{functionToCall:\"signUp\", params:[null]}).then(function(registeredUser) {\r" +
+    "    // assuming $scope.obj is used elsewhere in the app, this would update any views automatically\n" +
+    "    $scope.obj = queriedObj;\n" +
     "\n" +
-    "\r" +
+    "    return queriedObj;\n" +
+    "}, function(error) {\n" +
     "\n" +
-    "    // since we know that the result will be inside the Angular digest, we make use of Angular's two-way data binding and automatically update all our views by simply updating the user object\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    user = registeredUser;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    // we can even use it with Parse.Query\r" +
-    "\n" +
-    "    var query = new Parse.Query(MyObject);\r" +
-    "\n" +
-    "    query.include('myStuff').equalTo('someRandom','thing');\r" +
-    "\n" +
-    "    return ParseQueryAngular(query);\r" +
-    "\n" +
-    "}).then(function(queriedObj) {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    // assuming $scope.obj is used elsewhere in the app, this would update any views automatically\r" +
-    "\n" +
-    "    $scope.obj = queriedObj;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    return queriedObj;\r" +
-    "\n" +
-    "}, function(error) {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    // any rejected promises in the chain will be caught here\r" +
-    "\n" +
-    "    console.log(error);\r" +
-    "\n" +
-    "\r" +
+    "    // any rejected promises in the chain will be caught here\n" +
+    "    console.log(error);\n" +
     "\n" +
     "});</pre><br>Without ParseQueryAngular, doing two API calls one after the other would have been a nightmare of asynchronous spaghetti mess with lots of repetitive callback handling code. We just tamed it into a synchronous process and our AngularJS views would have been auto-updated every step of the way thanks to two-way data binding.<br><br>We also didn't need write any repetitive success: error: functions. This is the guts of creating a seamless Parse x Angular integration, we use this anytime we need talk to Parse. Check out the <strong><a href=https://github.com/brandid/parse-angular-demo/blob/master/client/app/scripts/services/ParseQueryAngular.js>ParseQueryAngular</a></strong> source and read the code comments on how we did this.</div></div><div class=top-margin><a href=#/features class=\"btn btn-block btn-secondary btn-large\">Back</a></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
@@ -535,12 +321,13 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/detail/ideas.detail.edit.html',
-    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/ideas/{{detailCtrl.current.id}}>Back</a><h1 class=\"human title\">Edit</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-user small-right-margin\"></i></h1></div></div><div id=loadingContainer class=\"relative row-fluid\"><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=\"row-fluid left-align\"><form name=editForm class=form-horizontal novalidate><div class=control-group><label class=control-label for=inputTitle>Title</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.title placeholder=Title required></div></div><div class=control-group><label class=control-label for=inputTout>Tweetable</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.tout placeholder=\"140 chars or less\" required></div></div><div class=control-group><label class=control-label for=inputTarget>Target Audience</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.target placeholder=Target required></div></div><div class=control-group><label class=control-label for=inputSummary>Idea Summary</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.summary placeholder=Summary required></div></div><div class=control-group><label class=control-label for=inputPitchVideoUrl>Pitch Video (optional)</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.pitchVideoUrl placeholder=\"60 seconds or less\"></div></div><div class=control-group><div class=controls><button ng-click=detailCtrl.saveIdea() class=\"btn btn-block btn-large btn-success\">Save Idea</button></div></div></form></div></div></div><div class=row-fluid></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
+    "<div class=row-fluid><div class=\"navi-bar-title dark\"><a class=navi-button-prev ng-click=\"setAnimationClass('moveleft')\" href=#/ideas/{{detailCtrl.current.id}}>Back</a><h1 class=\"human title\">Edit</h1></div><div class=\"row-fluid width-padding top-padding bottom-padding\"><div class=\"row-fluid center-align\"><div class=\"row-fluid bottom-margin\"><h1 class=\"punchy muted light-text-shadow\"><i class=\"icon icon-user small-right-margin\"></i></h1></div></div><div id=loadingContainer class=\"relative row-fluid\"><div class=\"row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=\"row-fluid left-align\"><form name=editForm class=form-horizontal novalidate><div class=control-group><label class=control-label for=inputTitle>Title</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.title placeholder=Title required></div></div><div class=control-group><label class=control-label for=inputTout>Tweetable</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.tout placeholder=\"140 chars or less\" required></div></div><div class=control-group><label class=control-label for=inputTarget>Target Audience</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.target placeholder=Target required></div></div><div class=control-group><label class=control-label for=inputPitchVideoUrl>Pitch Video (optional)</label><div class=controls><input style=width:97% ng-model=detailCtrl.editCurrent.pitchVideoUrl placeholder=\"60 seconds or less\"></div></div><div class=control-group><label class=control-label for=inputSummary>Idea Summary</label><div class=controls><textarea style=width:97%;height:400px ng-model=detailCtrl.editCurrent.summary placeholder=Summary required>\n" +
+    "\t\t\t\t\t    </textarea></div></div><div class=control-group><div class=controls><button ng-click=detailCtrl.saveIdea() class=\"btn btn-block btn-large btn-success\">Save Idea</button></div></div></form></div></div></div><div class=row-fluid></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
   $templateCache.put('app/views/detail/ideas.detail.html',
-    "<div class=row-fluid><div class=\"row-fluid idea-detail-header\"><div class=span9><div class=row-fluid><h3 class=\"pull-left no-top-margin\">{{detailCtrl.current.getTitle()}}</h3><a class=\"btn btn-primary\" href=#/ideas/{{detailCtrl.current.id}}/edit>Edit</a></div><h2>{{detailCtrl.current.getSummary()}}</h2><h3 class=\"creator pull-left\"><span class=small-right-margin>Creator</span>{{ \"Stephen Bluestone\" }}</h3><h3 class=\"creator pull-left small-left-margin\"><span class=small-right-margin>Target</span>{{detailCtrl.current.getTarget()}}</h3></div><div class=span3><div class=egg-wrapper><div class=\"traction dark\"><h3>Traction<br><span class=traction-numb>{{detailCtrl.current.getTraction()}}</span></h3></div><img src=img/egg-normal.png></div></div></div><div class=\"row-fluid width-padding top-padding bottom-padding idea-detail-detail\"><div class=\"span8 row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div class=row-fluid><div class=row-fluid><iframe ng-src={{trustSrc(featuredIdea.getPitchVideoUrl())}} frameborder=0 allowfullscreen></iframe></div><div class=row-fluid><div class=\"row-fluid center-align\"><h4 class=punchy>Problem Statement</h4><span class=\"machine muted\">{{detailCtrl.current.getTitle()}}</span></div></div></div><span ng-if=detailCtrl.current.getPitchVideoUrl()><div class=\"horizontal-line full-fade top-margin bottom-margin\"></div><h4 class=punchy>Pitch Video</h4><iframe width=420 height=315 src={{trustSrc(detailCtrl.current.getPitchVideoUrl())}} frameborder=0 allowfullscreen></iframe></span><div class=\"horizontal-line full-fade top-margin bottom-margin\"></div><h4 class=punchy>Pitch Summary</h4><span class=\"machine muted\">{{detailCtrl.current.getSummary()}}</span></div><div class=\"span3 row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align\"><div style=margin-bottom:15px><h3><span style=display:block>{{detailCtrl.current.getEducatorVotes()}}</span>Educator Endorsements</h3><button ng-click=detailCtrl.endorse() class=\"btn btn-block btn-large btn-success\">+ Endorse</button></div><div><h3><span style=display:block>{{detailCtrl.current.getDeveloperVotes()}}</span>Technologists</h3><button ng-click=detailCtrl.volunteer() class=\"btn btn-block btn-large btn-info\">+ Volunteer</button></div></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
+    "<div class=row-fluid><div class=\"row-fluid idea-detail-header\"><div class=span9><div class=row-fluid><h3 class=\"pull-left no-top-margin\">{{detailCtrl.current.getTitle()}}</h3><a class=\"btn btn-primary\" href=#/ideas/{{detailCtrl.current.id}}/edit>Edit</a></div><h2>{{detailCtrl.current.getTout()}}</h2><h3 class=\"creator pull-left\"><span class=small-right-margin>Creator</span>{{ \"Stephen Bluestone\" }}</h3><h3 class=\"creator pull-left small-left-margin\"><span class=small-right-margin>Target</span>{{detailCtrl.current.getTarget()}}</h3></div><div class=span3><div class=egg-wrapper><div class=\"traction dark\"><h3>Traction<br><span class=traction-numb>{{detailCtrl.current.getTraction()}}</span></h3></div><img src=img/egg-normal.png></div></div></div><div class=\"row-fluid width-padding top-padding idea-detail-detail\"><div class=\"span8 row-fluid withRadius center-align\"><div class=row-fluid><div class=row-fluid><iframe ng-src={{trustSrc(detailCtrl.current.getPitchVideoUrl())}} frameborder=0 allowfullscreen style=width:100%></iframe></div></div></div><div class=\"span3 row-fluid withRadius width-padding top-padding bottom-padding center-align\"><div style=margin-bottom:15px><h3><span style=display:block;font-size:32px;color:#83B016>{{detailCtrl.current.getEducatorVotes()}}</span>Educator Endorsements</h3><button ng-click=detailCtrl.endorse() class=\"btn btn-block btn-large btn-success\">+ Endorse</button></div><div><h3><span style=display:block;font-size:32px;color:#463FFA>{{detailCtrl.current.getDeveloperVotes()}}</span>Technologists</h3><button ng-click=detailCtrl.volunteer() class=\"btn btn-block btn-large btn-info\">+ Volunteer</button></div></div></div><div class=\"row-fluid width-padding top-padding bottom-padding idea-detail-detail\"><div class=\"span8 row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding\"><span btf-markdown=detailCtrl.current.getSummary()></span></div></div><div class=row-fluid ng-include=\"\" src=\"'app/views/footer.html'\"></div></div>"
   );
 
 
@@ -585,49 +372,30 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('app/views/tips/crud-tips.html',
-    "<div class=row-fluid><h5 class=punchy>How To CRUD:</h5></div><pre class=\"muted white-back left-align ani flash\">\r" +
+    "<div class=row-fluid><h5 class=punchy>How To CRUD:</h5></div><pre class=\"muted white-back left-align ani flash\">\n" +
+    "// create\n" +
+    "$scope.masterDetailCtrl.collection.addComment('Joe', 'exploding feces')\n" +
     "\n" +
-    "// create\r" +
+    "// update\n" +
+    "current.set('name', 'Bob');\n" +
+    "ParseQueryAngular(current, {functionToCall:\"save\", params:[null]});\n" +
     "\n" +
-    "$scope.masterDetailCtrl.collection.addComment('Joe', 'exploding feces')\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "// update\r" +
-    "\n" +
-    "current.set('name', 'Bob');\r" +
-    "\n" +
-    "ParseQueryAngular(current, {functionToCall:\"save\", params:[null]});\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "// delete\r" +
-    "\n" +
-    "ParseQueryAngular(current, {functionToCall:\"destroy\"});\r" +
-    "\n" +
+    "// delete\n" +
+    "ParseQueryAngular(current, {functionToCall:\"destroy\"});\n" +
     "</pre>"
   );
 
 
   $templateCache.put('app/views/tips/load-collections.html',
-    "<div class=row-fluid><h5 class=punchy>How To Load Collections:</h5></div><pre class=\"muted white-back left-align ani flash\">\r" +
+    "<div class=row-fluid><h5 class=punchy>How To Load Collections:</h5></div><pre class=\"muted white-back left-align ani flash\">\n" +
+    "// get the collection from our data definitions\n" +
+    "var Monsters = Monsterservice.collection;\n" +
     "\n" +
-    "// get the collection from our data definitions\r" +
+    "// new up a collection\n" +
+    "$scope.masterDetailCtrl.collection = new Monsters;\n" +
     "\n" +
-    "var Monsters = Monsterservice.collection;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "// new up a collection\r" +
-    "\n" +
-    "$scope.masterDetailCtrl.collection = new Monsters;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "// use the extended Parse SDK to load the whole collection\r" +
-    "\n" +
-    "$scope.masterDetailCtrl.collection.load();\r" +
-    "\n" +
+    "// use the extended Parse SDK to load the whole collection\n" +
+    "$scope.masterDetailCtrl.collection.load();\n" +
     "</pre>"
   );
 
