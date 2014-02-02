@@ -1,4 +1,4 @@
-html {
+html, body{
     background-color: #FAF3E6; /* Serpia */
     font-family: Georgia, Times, sans-serif;
     font-size: 22px;
@@ -28,7 +28,12 @@ a {
 .logo-wrapper h1 {
     font-size: 48px;
 }
-
+.center{
+    float: none;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center
+}
 .ge-logo-splash {
     width: 50px;
     height: auto;
@@ -280,4 +285,34 @@ header input[type=search] {
     padding: 15px 10px 9px 10px;
     margin-bottom: 0;
     margin-top: 0;
+}
+
+.btn {
+    font-family: Georgia, Times, sans-serif;
+    border-radius: 8px;
+    background: none;
+    border: 0;
+    font-size: 22px;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+.btn.btn-large {
+    font-size: 22px;
+}
+
+.btn-primary { background-color: #3F0632; /* Fusia Purple */ }
+.btn-primary:hover { background-color: #2B0D26; /* Dark Fusia Purple */ }
+
+.btn-success { background-color: #83B016; /* Green */ }
+.btn-sucess:hover { background-color: #527627; /* Dark Green */ }
+
+.btn-info { background-color: #463FFA; /* Blue */ }
+.btn-info:hover { background-color: #413D86; /* Dark Blue */ }
+
+.btn-primary, 
+.btn-success,
+.btn-info {
+    text-shadow: none;
 }
