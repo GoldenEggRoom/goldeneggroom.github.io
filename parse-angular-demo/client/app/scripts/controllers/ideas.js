@@ -6,7 +6,7 @@ angular.module('demo')
   $scope.ideasCtrl = {
     collection: ideas,
   };
-  $scope.featuredIdea = ideas[currentFeature];
+  $scope.featuredIdea = ideas.models[currentFeature];
 
   $scope.nextFeature = function()
   {
@@ -17,7 +17,7 @@ angular.module('demo')
     else {
       currentFeature = 0;
     }
-    $scope.featuredIdea = ideas[currentFeature];
+    $scope.featuredIdea = ideas.models[currentFeature];
   };
 
 

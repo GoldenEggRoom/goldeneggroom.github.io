@@ -156,6 +156,11 @@ module.exports = (grunt)->
       js:
         files:      '<%= CLIENT_DIR + JS_FILES %>'
         tasks:      [ 'copy:js', 'parallel:jshint' ]
+        
+      # Changes to app code should be validated and re-copied to the `build`, triggering `regarde:build`
+      css:
+        files:      '<%= CLIENT_DIR + CSS_FILES %>'
+        tasks:      [ 'copy:js', 'parallel:jshint' ]
 
 
       # Changes to server-side code should validate, restart the server, & refresh the browser

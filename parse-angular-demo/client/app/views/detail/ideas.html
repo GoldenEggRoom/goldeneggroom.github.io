@@ -5,15 +5,17 @@
 
 	<div class="row-fluid width-padding top-padding bottom-padding">
 		<div class="featured-idea" >
-			<a class="next-link">Next Pitch</a>
-			<iframe ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+
+			<iframe  ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen></iframe>
+
+			<a class="next-link" ng-click="nextFeature()">Next Pitch</a>
 			<div class="description">
 				<div class="traction">
 					<h3>TRACTION</h3>
 					<span>{{featuredIdea.getTraction()}}</span>
 				</div>
 				<h3>{{featuredIdea.getTitle()}}</h3>
-				<p>{{featuredIdea.getSummary()}}</p>
+				<p>"{{featuredIdea.getSummary()}}"</p>
 			</div>
 		</div>
 		<div class="row-fluid white-back withShadow withRadius center-align">
