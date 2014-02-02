@@ -7,6 +7,10 @@ h2 {
     font-family: ActaDisplay-Book, Times;
 }
 
+.btn-primary {
+    color: #3F0632; /* Fusia Purple */
+}
+
 h1,
 h2,
 h3 {

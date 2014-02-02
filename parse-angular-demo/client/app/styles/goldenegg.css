@@ -1,8 +1,3 @@
-@import url("http://hello.myfonts.net/count/29c680");
-
-  
-@font-face {font-family: 'ActaDisplay-Book';src: url('webfonts/29C680_0_0.eot');src: url('webfonts/29C680_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/29C680_0_0.woff') format('woff'),url('webfonts/29C680_0_0.ttf') format('truetype');}
-
 html {
     background-color: #FAF3E6; /* Serpia */
 }
@@ -10,6 +5,10 @@ html {
 h1,
 h2 {
     font-family: ActaDisplay-Book, Times;
+}
+
+.btn-primary {
+    color: #3F0632; /* Fusia Purple */
 }
 
 h1,
@@ -116,7 +115,7 @@ p {
     box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
 }
 
-.top-nav-bar h1, h2, h3 {
+.top-nav-bar h3 {
     font-family: 'Georgia','Times',serif;
 }
 
