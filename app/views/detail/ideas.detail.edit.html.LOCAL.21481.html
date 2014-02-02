@@ -1,0 +1,61 @@
+<div class="row-fluid">
+	<div class="navi-bar-title dark">
+
+		<a class="navi-button-prev" ng-click="setAnimationClass('moveleft')" href="#/ideas/{{detailCtrl.current.id}}">
+			Back
+		</a>
+
+		    <h1 class="human title">Edit</h1>
+
+	</div>
+
+	<div class="row-fluid width-padding top-padding bottom-padding">
+
+		<div class="row-fluid center-align">
+			<div class="row-fluid bottom-margin">
+				<h1 class="punchy muted light-text-shadow"><i class="icon icon-user small-right-margin"></i></h1>				
+			</div>
+		</div>
+
+		<div id="loadingContainer" class="relative row-fluid">
+			<div class="row-fluid white-back withShadow withRadius width-padding top-padding bottom-padding center-align">
+		
+				<div class="row-fluid left-align">
+
+					<form name="editForm" class="form-horizontal" novalidate>
+					  <div class="control-group">
+					    <label class="control-label" for="inputTitle">Problem Statement</label>
+					    <div class="controls">
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.title" placeholder="Title" required>
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputSummary">Problem Summary</label>
+					    <div class="controls">
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.summary" placeholder="Summary" required>
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputPitchVideoUrl">Pitch Video URL</label>
+					    <div class="controls">
+					      <input style="width:97%" type="text" ng-model="detailCtrl.editCurrent.pitchVideoUrl" placeholder="PicthVideoUrl">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <div class="controls">
+					      <button ng-click="detailCtrl.saveIdea()" class="btn btn-block btn-large btn-success">Save To Parse</button>
+					    </div>
+					  </div>
+					</form>
+
+				</div>
+					
+
+			</div>
+		</div>
+
+		<div class="row-fluid"></div>
+		
+	</div>
+	<div class="row-fluid" ng-include src="'app/views/footer.html'"></div>		
+</div>

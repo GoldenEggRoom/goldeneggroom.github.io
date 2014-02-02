@@ -1,4 +1,4 @@
-<header class="row-fluid center-align header">
+<header class="container header">
 
     <div class="row-fluid top-margin top-nav-bar">
             <ul>
@@ -6,17 +6,17 @@
                 <li><a href="#">Ideas</a></li>
                 <li><a href="#/about">How it works</a></li>
                 <li><input type="search" placeholder="Search"></li>
-                <li><a href="#/create" class="btn btn-large btn-primary">Launch an idea</a></li>
-                <li class="user-login">
+                <li class="pull-right user-login">
                     <a class="lnk-login" href="#/facebook">Log in</a>
                 </li>
                 <li>
-                  <div class="user-info" style="display:none;">
+                  <div class="pull-right user-info" style="display:none;">
                     <div class="user-pic" style="width:50px; height: 50px; border-radius:150px; -webkit-border-radius:150px; margin: auto; background-image:url({{user.picture }})"></div>
                     <div class="user-role" ></div>
                     <div class="user-name" >Hello {{user.firstName }}</div>
                   </div>
                 </li>
+                <li class="pull-right"><a href="#/create" class="btn btn-large btn-primary" >Launch an idea</a></li>
             </ul>
         </div>
         <div style="clear:both"></div>
