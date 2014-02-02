@@ -108,6 +108,12 @@ angular.module('ExternalDataServices')
 		getTarget: function(target) {
 			return this.get('target');
 		},
+		getCreatedAt: function() {
+			return this.get('createdAt');
+		},
+		getUpdateAt: function() {
+			return this.get('updateAt');
+		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}

@@ -8,6 +8,7 @@ angular.module('demo')
   };
   $scope.featuredIdea = ideas.models[currentFeature];
 
+  
   $scope.nextFeature = function()
   {
     if(currentFeature < ideas.length - 1)
