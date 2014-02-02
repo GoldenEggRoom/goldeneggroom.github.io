@@ -38,6 +38,22 @@ angular.module('ExternalDataServices')
 			this.set('monetaryCommitment', monetaryCommitment);
 			return this;
 		},
+		setEducatorVotes: function(educatorVotes) {
+			this.set('educatorVotes', educatorVotes);
+			return this;
+		},
+		setDeveloperVotes: function(developerVotes) {
+			this.set('developerVotes', developerVotes);
+			return this;
+		},
+		incrementEducatorVotes: function() {
+			this.increment('educatorVotes');
+			return this;
+		},
+		incrementDeveloperVotes: function() {
+			this.increment('developerVotes');
+			return this;
+		},
 		getOwner: function(owner) {
 			return this.get('owner');
 		},
@@ -64,7 +80,16 @@ angular.module('ExternalDataServices')
 		},
 		getTraction: function() {
 			return this.get('devCommitment') + this.get('designCommitment') + 
-				this.get('educatorCommitment') + this.get('monetaryCommitment');
+				this.get('educatorCommitment') + this.get('monetaryCommitment') + this.getVotes();
+		},
+		getEducatorVotes: function(educatorVotes) {
+			return this.get('educatorVotes');
+		},
+		getDeveloperVotes: function(developerVotes) {
+			return this.get('developerVotes');
+		},
+		getVotes: function() {
+			return this.get('developerVotes') + this.get('educatorVotes');
 		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
@@ -87,6 +112,8 @@ angular.module('ExternalDataServices')
 			idea.setDesignCommitment(0);
 			idea.setEducatorCommitment(0);
 			idea.setMonetaryCommitment(0);
+			idea.setEducatorVotes(0);
+			idea.setDeveloperVotes(0);
 
 			// use the extended Parse SDK to perform a save and return the promised object back into the Angular world
 			return idea.saveParse().then(function(data){
