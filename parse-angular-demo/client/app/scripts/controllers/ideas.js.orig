@@ -6,8 +6,9 @@ angular.module('demo')
   $scope.ideasCtrl = {
     collection: ideas,
   };
-  $scope.featuredIdea = ideas.models[currentFeature];
+  $scope.featuredIdea = ideas[currentFeature];
 
+<<<<<<< HEAD
   $scope.nextFeature = function()
   {
     if(currentFeature < ideas.length - 1)
@@ -17,9 +18,16 @@ angular.module('demo')
     else {
       currentFeature = 0;
     }
-    $scope.featuredIdea = ideas.models[currentFeature];
+    $scope.featuredIdea = ideas[currentFeature];
   };
 
+=======
+  $scope.goBackTo = function(state) {
+    
+    $state.transitionTo(state);
+    // $scope.masterDetailCtrl.animate = { enter: 'waveForward-enter', leave: 'waveForward-leave' };
+  }
+>>>>>>> 540e9ef4d08e54f6f3f2255e7f75b3c794e45fb4
 
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);

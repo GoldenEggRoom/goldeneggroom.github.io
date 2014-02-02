@@ -62,6 +62,10 @@ angular.module('ExternalDataServices')
 		getMonetaryCommitment: function(monetaryCommitment) {
 			return this.get('monetaryCommitment');
 		},
+		getTraction: function() {
+			return this.get('devCommitment') + this.get('designCommitment') + 
+				this.get('educatorCommitment') + this.get('monetaryCommitment');
+		},
 		destroyParse:function(){
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}

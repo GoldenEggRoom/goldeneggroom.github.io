@@ -1,16 +1,25 @@
 angular.module('demo')
 
 .controller('IdeasController', ['$rootScope', '$scope', '$state', '$stateParams', '$sce', 'IdeaService', 'ideas', function($rootScope, $scope, $state, $stateParams, $sce, IdeaService, ideas) {
+  
+  var currentFeature = 0;
   $scope.ideasCtrl = {
     collection: ideas,
-    featuredIdea: ideas[0]
+  };
+  $scope.featuredIdea = ideas.models[currentFeature];
+
+  $scope.nextFeature = function()
+  {
+    if(currentFeature < ideas.length - 1)
+    {
+  	 currentFeature++;
+    }
+    else {
+      currentFeature = 0;
+    }
+    $scope.featuredIdea = ideas.models[currentFeature];
   };
 
-  $scope.goBackTo = function(state) {
-    
-    $state.transitionTo(state);
-    // $scope.masterDetailCtrl.animate = { enter: 'waveForward-enter', leave: 'waveForward-leave' };
-  }
 
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
