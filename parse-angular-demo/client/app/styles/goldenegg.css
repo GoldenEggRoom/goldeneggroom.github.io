@@ -15,7 +15,6 @@ h3 {
     margin-top: 30px;
 }
 
-
 a {
     color: inherit;
     text-decoration: underline;
@@ -71,7 +70,9 @@ p {
     background-color: #FAF3E6; /* Serpia */
 }
 
-
+.fusia {
+    background-color: #800080; /* Fusia Purple */
+}
 
 .featured-idea
 {
@@ -327,6 +328,19 @@ header input[type=search] {
     padding: 15px 10px 9px 10px;
     margin-bottom: 0;
     margin-top: 0;
+}
+
+
+footer ul {
+    margin: 0 0 0 0;
+    list-style: none;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 20px 10px 0;
+    vertical-align: center;
+    line-height: 1.55;
 }
 
 .btn {
