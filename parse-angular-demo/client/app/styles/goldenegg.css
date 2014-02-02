@@ -94,20 +94,9 @@ p {
 .featured-idea .next-link
 {
 	position: absolute;
-	right:32%;
+	right:37%;
 	z-index: 100;
-	text-transform: uppercase;
-	font-size: 18px;
-    font-weight: bold;
-	cursor: pointer;
-	color: white;
-    margin-top: 310px;
-	text-shadow: 0 0 1em #231B58, 0 0 1em #231B58, 0 0 1em #231B58;
-    background: #231B58;
-    border-radius: 5px;
-    padding: 5px;
-
-
+    margin-top: 300px;
 }
 .featured-idea iframe {
 	width:600px;
@@ -156,55 +145,87 @@ p {
 	font-weight: bold;
 }
 
-.idea-link{
-    margin: 10px;
-	cursor: pointer;
-}
-.idea-link a:hover{
-	text-decoration: none;
-    box-shadow: 10px 10px 10px gray;
-}
-.idea-link-right{
-	float:right;
-}
-.idea-link .title{
-	margin-left:30%;
-	text-align: center;
-	padding: 10px;
-	float: right;
 
-}
-.idea-link .summary{
-	font-style: italic;
+
+.new-ideas {
+    background-color: none;
+    font-family: Georgia, Times, sans-serif;
 }
 
-.idea-link .traction{
-	text-align: center;
-	height: 100%;
-	width: 120px;
-    margin-left: 10px;
-	position: absolute;
-	top:0;
-	background: url('/img/egg-normal.png');
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+ol.idea-list {
+    margin-left: 0;
+    margin-top: 12px;
 }
-.idea-link .traction label{
-	top: 36%;
-	margin: auto;
-	position: relative;
-	font-size: 16px;
-    font-weight: bold;
+
+.idea-list .idea {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.55;
+    list-style: none;
+    padding-left: 64px;
+    background-color: white;
+    padding: 32px 22px;
+    margin: 0;
+    margin-bottom: 14px;
+    font-style: italic;
+    min-height: 108px;
+    cursor: pointer;
 }
-.idea-link .traction span{
-	top: 41%;
-	position: relative;
-	margin: auto;
-    display: block;
+
+.idea a{
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+}
+.idea:hover {
+    box-shadow: 0px 0px 10px rgb(124, 121, 36);
+}
+
+
+.idea-listing-content {
+    margin-left: 110px;
+}
+
+.idea .idea-name {
+    margin-top: 0;
+}
+
+.idea:hover .idea-name {
+    text-decoration: underline;
+}
+.idea-sentence {
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+.egg-wrapper {
+    position: absolute;
+    top: 22;
+    left: 22;
+    width: 78px;
+    border-radius: 100px;
+    overflow: visible;
+}
+
+.egg-wrapper h3 {
+    width: 200px;
+    position: absolute;
+    text-align: center;
+    top: -8px;
+    left: 50%;
+    margin-left: -98px;
+}
+
+.egg-wrapper h3 .traction-numb {
+    display: inline-block;
     font-size: 30px;
-    font-weight: bold;
+    color: #3F0632;
+    margin-top: 4px;
+}
 
+.egg-wrapper img {
+    width: 100%;
+    height: auto;
 }
 .discussion {
     background-color: none;
@@ -271,7 +292,11 @@ header li {
 header .user-login,
 header .user-info {
     float: right;
-    margin: 9px 0 0 0;
+    height: 25px;
+}
+header .user-name{
+    font-size: 12px;
+    color: #3F0632;
 }
 
 header input[type=search] {
@@ -315,4 +340,41 @@ header input[type=search] {
 .btn-success,
 .btn-info {
     text-shadow: none;
+}
+
+/* you can use natural CSS transitions just
+   as you would without using ngAnimate */
+.anifade {
+}
+
+.anifade.ng-hide {
+}
+
+.anifade.ng-hide-add {
+  /* this needs to be here to make it visible during the animation
+     since the .ng-hide class is already on the element rendering
+     it as hidden. */
+    /* position: relative;
+     left:0;
+     top:0;*/
+    -webkit-animation:1s slide-animation-leave;
+    
+    display: block !important;
+
+}
+.anifade.ng-hide-remove {
+    -webkit-animation:1s slide-animation-enter;
+      -webkit-animation-delay: 1s;
+      /* Safari and Chrome */
+      -moz-animation-delay: 1s;
+      /* Firefox */
+      -ms-animation-delay: 1s;
+      /* Steve Ballmer */
+      -o-animation-delay: 1s;
+      /* Opera */
+      animation-delay: 1s;
+      display: block;
+      height: 0px !important;
+      min-height: 0px;
+      opacity: 0;
 }

@@ -13903,7 +13903,7 @@ form .red {
   /* line 80, ../../../client/app/styles/ng-animate/angular-1.2/_move.scss */
   from {
     z-index: 100;
-    top: 600px;
+    height: 350px;
     opacity: 0;
   }
 
@@ -13911,6 +13911,7 @@ form .red {
   to {
     top: 0;
     opacity: 1;
+    height: 350px;
   }
 }
 
@@ -13933,7 +13934,7 @@ form .red {
   /* line 104, ../../../client/app/styles/ng-animate/angular-1.2/_move.scss */
   from {
     z-index: 100;
-    top: 600px;
+    height: 350px;
     opacity: 0;
   }
 
@@ -13941,6 +13942,7 @@ form .red {
   to {
     top: 0;
     opacity: 1;
+    height: 350px;
   }
 }
 

@@ -156,55 +156,79 @@ p {
 	font-weight: bold;
 }
 
-.idea-link{
-    margin: 10px;
-	cursor: pointer;
-}
-.idea-link a:hover{
-	text-decoration: none;
-    box-shadow: 10px 10px 10px gray;
-}
-.idea-link-right{
-	float:right;
-}
-.idea-link .title{
-	margin-left:30%;
-	text-align: center;
-	padding: 10px;
-	float: right;
 
-}
-.idea-link .summary{
-	font-style: italic;
+
+.new-ideas {
+    background-color: none;
+    font-family: Georgia, Times, sans-serif;
 }
 
-.idea-link .traction{
-	text-align: center;
-	height: 100%;
-	width: 120px;
-    margin-left: 10px;
-	position: absolute;
-	top:0;
-	background: url('/img/egg-normal.png');
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+ol.idea-list {
+    margin-left: 0;
+    margin-top: 12px;
 }
-.idea-link .traction label{
-	top: 36%;
-	margin: auto;
-	position: relative;
-	font-size: 16px;
-    font-weight: bold;
+
+.idea-list .idea {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.55;
+    list-style: none;
+    padding-left: 64px;
+    background-color: white;
+    padding: 32px 22px;
+    margin: 0;
+    margin-bottom: 14px;
+    font-style: italic;
+    min-height: 108px;
+    cursor: pointer;
 }
-.idea-link .traction span{
-	top: 41%;
-	position: relative;
-	margin: auto;
-    display: block;
+
+.idea-listing-content {
+    margin-left: 110px;
+}
+
+.idea .idea-name {
+    margin-top: 0;
+}
+
+.idea:hover .idea-name {
+    text-decoration: underline;
+}
+
+
+.idea-sentence {
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+.egg-wrapper {
+    position: absolute;
+    top: 22;
+    left: 22;
+    width: 78px;
+    border-radius: 100px;
+    overflow: visible;
+}
+
+.egg-wrapper h3 {
+    width: 200px;
+    position: absolute;
+    text-align: center;
+    top: -8px;
+    left: 50%;
+    margin-left: -98px;
+}
+
+.egg-wrapper h3 .traction-numb {
+    display: inline-block;
     font-size: 30px;
-    font-weight: bold;
+    color: #3F0632;
+    margin-top: 4px;
+}
 
+.egg-wrapper img {
+    width: 100%;
+    height: auto;
 }
 .discussion {
     background-color: none;
