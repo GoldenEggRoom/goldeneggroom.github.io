@@ -80,7 +80,7 @@ angular.module('ExternalDataServices')
 		},
 		getTraction: function() {
 			return this.get('devCommitment') + this.get('designCommitment') + 
-				this.get('educatorCommitment') + this.get('monetaryCommitment') + this.getVotes();
+				this.get('educatorCommitment') + this.getVotes();
 		},
 		getEducatorVotes: function(educatorVotes) {
 			return this.get('educatorVotes');
