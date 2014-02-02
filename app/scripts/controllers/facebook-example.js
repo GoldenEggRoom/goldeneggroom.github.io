@@ -11,13 +11,6 @@ angular.module('facebook')
 
   $scope.asEducator = function () {
       goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
-<<<<<<< HEAD
-          goldenEggUsers.remove(goldenEggUser.models[0].id);
-          goldenEggUser.models[0].attributes['role'] = 'educator';
-          goldenEggUsers.addGoldenEggUser(goldenEggUser.models[0].attributes['userId'], goldenEggUser.models[0].attributes['faecbookId'], null, 'educator', goldenEggUser.models[0].attributes['firstName'], goldenEggUser.models[0].attributes['lastName']);
-      });
-  }
-=======
           var user = goldenEggUser.models[0];
 
           goldenEggUsers.addGoldenEggUser(user.getUserId(), user.getFacebookId(), null, 'educator', user.getFirstName(), user.getLastName(), user.getPicture());
@@ -36,18 +29,20 @@ angular.module('facebook')
       });
   }
 
->>>>>>> 9b7298027b5fa3c340d7d9d690a2a4d139efed40
   if (Parse.User.current()) {
       $scope.facebookCtrl.fbAuthData = Parse.User.current().get('authData');
       
       goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
+          if (goldenEggUser.models.length == 0) {
+              $scope.fbConnect();
+          }
           var userInfo = goldenEggUser.models[0];
-          Parse.User.current().userId = userInfo.getUserId();
+          Parse.User.current().facebookId = userInfo.getFacebookId();
           Parse.User.current().firstName = userInfo.getFirstName();
           Parse.User.current().lastName = userInfo.getLastName();
           Parse.User.current().picture = userInfo.getPicture();
 
-          $('.user-name').html('Welcome ' + userInfo.getRole() + ' ' + userInfo.getFirstName() + ' ' + userInfo.getLastName() + '!');
+          $('.user-name').html('Welcome ' + (userInfo.getRole()? userInfo.getRole(): '') + ' ' + userInfo.getFirstName() + ' ' + userInfo.getLastName() + '!');
 
           $('.user-pic').css('background-image', 'url("' + userInfo.getPicture() + '")');
 
@@ -63,7 +58,7 @@ angular.module('facebook')
 
           }
       });
-  } else {
+  }
       
 
       $scope.fbConnect = function () {
@@ -87,12 +82,23 @@ angular.module('facebook')
                                   FB.api(
                                       "/me/picture",
                                       function (response) {
-                                          debugger;
 
                                           var picture = response.data.url;
                                           if (response && !response.error) {
-                                              goldenEggUsers.addGoldenEggUser(userId, facebookId, null, null, firstName, lastName, picture);
-                                              window.location = "#/facebook/role";
+                                              goldenEggUsers.loadGoldenEggUserWithId(Parse.User.current().id).then(function (goldenEggUser) {
+
+                                                  if (goldenEggUser.models.length == 0) {
+                                                      goldenEggUsers.addGoldenEggUser(userId, facebookId, null, null, firstName, lastName, picture);
+                                                      window.location = "#/facebook/role";
+                                                  } else if (goldenEggUser.models[0].getRole()) {
+                                                      window.location = "#/facebook/role";
+                                                  } else {
+                                                      window.location = "#/";
+
+                                                  }
+                                                  
+                                              });
+
                                           }
                                       }
                                     );
@@ -120,5 +126,5 @@ angular.module('facebook')
 
 
 
-  }
+  
 }]);
