@@ -203,11 +203,12 @@ p {
 }
 
 .idea-link{
-	
+    margin: 10px;
+	cursor: pointer;
 }
 .idea-link a:hover{
 	text-decoration: none;
-
+    box-shadow: 10px 10px 10px gray;
 }
 .idea-link-right{
 	float:right;
@@ -226,7 +227,8 @@ p {
 .idea-link .traction{
 	text-align: center;
 	height: 100%;
-	width: 30%;
+	width: 120px;
+    margin-left: 10px;
 	position: absolute;
 	top:0;
 	background: url('/img/egg-normal.png');
@@ -235,13 +237,18 @@ p {
 	background-repeat: no-repeat;
 }
 .idea-link .traction label{
-	top: 33%;
+	top: 36%;
 	margin: auto;
 	position: relative;
-	font-size: 10px;
+	font-size: 16px;
+    font-weight: bold;
 }
 .idea-link .traction span{
-	top: 45%;
-	position: absolute;
+	top: 41%;
+	position: relative;
 	margin: auto;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+
 }

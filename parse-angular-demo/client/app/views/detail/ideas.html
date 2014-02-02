@@ -18,7 +18,7 @@
 			<div class="pull-left span6">
 				<h3>New</h3>
 				<div class="row-fluid white-back withShadow withRadius center-align idea-link" 
-					ng-repeat="item in ideasCtrl.collection.models"
+					ng-repeat="item in ideasCtrl.collection.models | orderBy:'-getCreatedAt()'"
 					ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }" >
 					<a href="#/ideas/{{item.id}}"
 						class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top">
@@ -39,9 +39,9 @@
 
 			</div>
 			<div class="pull-right span6">
-				<h3>Recent</h3>
+				<h3>Rising</h3>
 				<div class="row-fluid white-back withShadow withRadius center-align idea-link" 
-					ng-repeat="item in ideasCtrl.collection.models"
+					ng-repeat="item in ideasCtrl.collection.models| orderBy:'-getTraction()'"
 					ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }" 
 					ng-fil>
 					<a href="#/ideas/{{item.id}}"
