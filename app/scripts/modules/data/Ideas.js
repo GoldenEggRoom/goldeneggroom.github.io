@@ -72,19 +72,24 @@ angular.module('ExternalDataServices')
 		comparator: function(model) {
 			return -model.createdAt.getTime();
 		},
-		addIdea: function(owner, title, summary, pitchVideoUrl) {
+		addIdea: function(title, summary, complete) {
 	 		// save request_id to Parse
 	 		var _this = this;
 
 			var idea = new Idea;
-			idea.setOwner(owner);
 			idea.setTitle(title);
 			idea.setSummary(summary);
-			idea.setPitchVideoUrl(pitchVideoUrl);
+			idea.setDevCommitment(0);
+			idea.setDesignCommitment(0);
+			idea.setEducatorCommitment(0);
+			idea.setMonetaryCommitment(0);
 
 			// use the extended Parse SDK to perform a save and return the promised object back into the Angular world
 			return idea.saveParse().then(function(data){
 				_this.add(data);
+				if (typeof(complete) === "function") {
+					complete(data);
+				}
 			})
 	 	},
 	 	removeIdea:function(idea) {

@@ -63,5 +63,15 @@ angular.module('demo', ['ParseServices', 'ExternalDataServices'])
         }
     })
 
+    .state('demo.create', {
+        url: '/create',
+        views: {
+            'detail@demo' : {
+                templateUrl: 'app/views/detail/ideas.detail.create.html',
+                controller: 'DetailController'
+            }
+        }
+    })
+
 
 }])

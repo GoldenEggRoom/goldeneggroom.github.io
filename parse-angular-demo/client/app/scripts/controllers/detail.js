@@ -48,6 +48,15 @@ angular.module('demo')
 
   }
 
+  $scope.detailCtrl.createIdea = function() {
+
+    // set the new attributes
+    $scope.ideasCtrl.collection.addIdea($scope.detailCtrl.editCurrent.title, $scope.detailCtrl.editCurrent.summary, function(data) {
+      $location.path('/ideas/' + data.id + '/edit')
+    })
+
+  }
+
   $scope.transitionTo = function(state) {
     $state.transitionTo(state);
   }
