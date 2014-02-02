@@ -48,6 +48,41 @@ angular.module('demo')
 
   }
 
+  $scope.detailCtrl.createIdea = function() {
+
+    // set the new attributes
+    $scope.ideasCtrl.collection.addIdea($scope.detailCtrl.editCurrent.title, $scope.detailCtrl.editCurrent.summary, function(data) {
+      $location.path('/ideas/' + data.id + '/edit')
+    })
+
+  }
+
+  $scope.detailCtrl.endorse = function() {
+
+    $scope.detailCtrl.current.incrementEducatorVotes();
+
+    $scope.detailCtrl.current.saveParse().then(function(idea) {
+
+    }, function(err) {
+      // catch any errors
+      alert('Error saving to Parse, check the console and network tab')
+      console.log(err)
+    })
+  }
+
+  $scope.detailCtrl.volunteer = function() {
+
+    $scope.detailCtrl.current.incrementDeveloperVotes();
+
+    $scope.detailCtrl.current.saveParse().then(function(idea) {
+
+    }, function(err) {
+      // catch any errors
+      alert('Error saving to Parse, check the console and network tab')
+      console.log(err)
+    })
+  }
+
   $scope.transitionTo = function(state) {
     $state.transitionTo(state);
   }

@@ -38,6 +38,22 @@ angular.module('ExternalDataServices')
 			this.set('monetaryCommitment', monetaryCommitment);
 			return this;
 		},
+		setEducatorVotes: function(educatorVotes) {
+			this.set('educatorVotes', educatorVotes);
+			return this;
+		},
+		setDeveloperVotes: function(developerVotes) {
+			this.set('developerVotes', developerVotes);
+			return this;
+		},
+		incrementEducatorVotes: function() {
+			this.increment('educatorVotes');
+			return this;
+		},
+		incrementDeveloperVotes: function() {
+			this.increment('developerVotes');
+			return this;
+		},
 		getOwner: function(owner) {
 			return this.get('owner');
 		},
@@ -64,7 +80,19 @@ angular.module('ExternalDataServices')
 		},
 		getTraction: function() {
 			return this.get('devCommitment') + this.get('designCommitment') + 
-				this.get('educatorCommitment') + this.get('monetaryCommitment');
+				this.get('educatorCommitment') + this.getVotes();
+		},
+		getEducatorVotes: function(educatorVotes) {
+			return this.get('educatorVotes');
+		},
+		getDeveloperVotes: function(developerVotes) {
+			return this.get('developerVotes');
+		},
+		getVotes: function() {
+			return this.get('developerVotes') + this.get('educatorVotes');
+		},
+		getVolunteers: function() {
+			return this.get('devCommitment') + this.get('designCommitment') + this.get('educatorCommitment');
 		},
 		getCreatedAt: function() {
 			return this.get('createdAt');
@@ -82,19 +110,26 @@ angular.module('ExternalDataServices')
 		comparator: function(model) {
 			return -model.createdAt.getTime();
 		},
-		addIdea: function(owner, title, summary, pitchVideoUrl) {
+		addIdea: function(title, summary, complete) {
 	 		// save request_id to Parse
 	 		var _this = this;
 
 			var idea = new Idea;
-			idea.setOwner(owner);
 			idea.setTitle(title);
 			idea.setSummary(summary);
-			idea.setPitchVideoUrl(pitchVideoUrl);
+			idea.setDevCommitment(0);
+			idea.setDesignCommitment(0);
+			idea.setEducatorCommitment(0);
+			idea.setMonetaryCommitment(0);
+			idea.setEducatorVotes(0);
+			idea.setDeveloperVotes(0);
 
 			// use the extended Parse SDK to perform a save and return the promised object back into the Angular world
 			return idea.saveParse().then(function(data){
 				_this.add(data);
+				if (typeof(complete) === "function") {
+					complete(data);
+				}
 			})
 	 	},
 	 	removeIdea:function(idea) {

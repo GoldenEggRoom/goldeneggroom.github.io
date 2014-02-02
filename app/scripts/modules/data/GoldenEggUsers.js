@@ -18,6 +18,10 @@ angular.module('ExternalDataServices')
 			this.set('role', role);
 			return this;
 		},
+		setPicture: function(pic) {
+		    this.set('picture', pic);
+		    return this;
+		},
 		setFirstName: function(firstName){
 		    this.set('firstName', firstName);
 		    return this;
@@ -34,6 +38,9 @@ angular.module('ExternalDataServices')
 		},
 		getRole: function(role) {
 			return this.get('role');
+		},
+		getPicture: function(pic) {
+		    return this.get('picture');
 		},
 		getFirstName: function(){
 		    return this.get('firstName');
@@ -57,7 +64,7 @@ angular.module('ExternalDataServices')
 			// use the enhanced load() function to fetch the collection
 			return this.load();
 		},
-		addGoldenEggUser: function(userId, facebookId, email, role, firstName, lastName) {
+		addGoldenEggUser: function(userId, facebookId, email, role, firstName, lastName, picture) {
 	 		// save request_id to Parse
 	 		var _this = this;
 
@@ -68,7 +75,7 @@ angular.module('ExternalDataServices')
 			//user.setEmail(email);
 			user.setFirstName(firstName);
 			user.setLastName(lastName);
-
+			user.setPicture(picture);
 
 			// use the extended Parse SDK to perform a save and return the promised object back into the Angular world
 			return user.saveParse().then(function(data){
