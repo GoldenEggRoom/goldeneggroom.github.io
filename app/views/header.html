@@ -2,9 +2,9 @@
 
     <div class="row-fluid top-margin top-nav-bar">
             <ul>
-                <li><a href="javascipt:"><img src="img/egg-gold.png" alt="logo" width="36" height="auto"></a></li>
-                <li><a href="javascipt:">Ideas</a></li>
-                <li><a href="javascipt:">How it works</a></li>
+                <li><a href="#"><img src="img/egg-gold.png" alt="logo" width="36" height="auto"></a></li>
+                <li><a href="#">Ideas</a></li>
+                <li><a href="#/about">How it works</a></li>
                 <li><input type="search" placeholder="Search"></li>
                 <li><a href="#/create" class="btn btn-large btn-primary">Launch an idea</a></li>
                 <li class="user-login">
@@ -12,9 +12,9 @@
                 </li>
                 <li>
                   <div class="user-info" style="display:none;">
-                    <div class="user-pic" style="width:50px; height: 50px; float: right; background-image:url({{user.picture }})"></div>
-                    <div class="user-role" style="color:blue;"></div>
-                    <div class="user-name" style="color:blue;">Welcome! {{user.firstName }} {{user.lastName}}</div>
+                    <div class="user-pic" style="width:50px; height: 50px; border-radius:150px; -webkit-border-radius:150px; margin: auto; background-image:url({{user.picture }})"></div>
+                    <div class="user-role" ></div>
+                    <div class="user-name" >Hello {{user.firstName }}</div>
                   </div>
                 </li>
             </ul>

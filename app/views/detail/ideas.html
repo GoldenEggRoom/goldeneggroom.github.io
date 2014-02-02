@@ -8,16 +8,18 @@
 	    <h3>Ideas for education leade</h3>
 	</div>
 	<div class="row-fluid width-padding top-padding bottom-padding">
-		<div class="row-fluid span12 featured-idea" >
-
-			<iframe  ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen class="span9"></iframe>
+		<div class="row-fluid span12 featured-idea anifade" 
+		ng-repeat="featuredIdea in ideasCtrl.collection.models| orderBy:'-getTraction()'"
+		ng-hide="!isCurrentSlideIndex($index)">
+			<iframe  ng-src="{{trustSrc(featuredIdea.getPitchVideoUrl())}}" frameborder="0" allowfullscreen class="span9" ></iframe>
 			<div class="next-link">
-				<a  ng-click="nextFeature()">Next Pitch</a>
+				<a  ng-click="nextFeature()" class="btn btn-large btn-primary">Next Pitch</a>
 			</div>
 			<div class="span3 description">
 				<div class="traction">
-					<h3>TRACTION</h3>
-					<span>{{featuredIdea.getTraction()}}</span>
+					<h3>Traction<br />
+						<span class="traction-numb">{{featuredIdea.getTraction()}}</span>
+					</h3>
 				</div>
 				<h3>{{featuredIdea.getTitle()}}</h3>
 				<p>"{{featuredIdea.getSummary()}}"</p>

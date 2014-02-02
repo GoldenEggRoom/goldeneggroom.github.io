@@ -94,20 +94,9 @@ p {
 .featured-idea .next-link
 {
 	position: absolute;
-	right:32%;
+	right:37%;
 	z-index: 100;
-	text-transform: uppercase;
-	font-size: 18px;
-    font-weight: bold;
-	cursor: pointer;
-	color: white;
-    margin-top: 310px;
-	text-shadow: 0 0 1em #231B58, 0 0 1em #231B58, 0 0 1em #231B58;
-    background: #231B58;
-    border-radius: 5px;
-    padding: 5px;
-
-
+    margin-top: 300px;
 }
 .featured-idea iframe {
 	width:600px;
@@ -183,6 +172,16 @@ ol.idea-list {
     cursor: pointer;
 }
 
+.idea a{
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+}
+.idea:hover {
+    box-shadow: 0px 0px 10px rgb(124, 121, 36);
+}
+
+
 .idea-listing-content {
     margin-left: 110px;
 }
@@ -194,8 +193,6 @@ ol.idea-list {
 .idea:hover .idea-name {
     text-decoration: underline;
 }
-
-
 .idea-sentence {
     margin-top: 4px;
     font-size: 20px;
@@ -295,7 +292,11 @@ header li {
 header .user-login,
 header .user-info {
     float: right;
-    margin: 9px 0 0 0;
+    height: 25px;
+}
+header .user-name{
+    font-size: 12px;
+    color: #3F0632;
 }
 
 header input[type=search] {
@@ -339,4 +340,41 @@ header input[type=search] {
 .btn-success,
 .btn-info {
     text-shadow: none;
+}
+
+/* you can use natural CSS transitions just
+   as you would without using ngAnimate */
+.anifade {
+}
+
+.anifade.ng-hide {
+}
+
+.anifade.ng-hide-add {
+  /* this needs to be here to make it visible during the animation
+     since the .ng-hide class is already on the element rendering
+     it as hidden. */
+    /* position: relative;
+     left:0;
+     top:0;*/
+    -webkit-animation:1s slide-animation-leave;
+    
+    display: block !important;
+
+}
+.anifade.ng-hide-remove {
+    -webkit-animation:1s slide-animation-enter;
+      -webkit-animation-delay: 1s;
+      /* Safari and Chrome */
+      -moz-animation-delay: 1s;
+      /* Firefox */
+      -ms-animation-delay: 1s;
+      /* Steve Ballmer */
+      -o-animation-delay: 1s;
+      /* Opera */
+      animation-delay: 1s;
+      display: block;
+      height: 0px !important;
+      min-height: 0px;
+      opacity: 0;
 }

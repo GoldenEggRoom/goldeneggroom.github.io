@@ -2,23 +2,31 @@ angular.module('demo')
 
 .controller('IdeasController', ['$rootScope', '$scope', '$state', '$stateParams', '$sce', 'IdeaService', 'ideas', function($rootScope, $scope, $state, $stateParams, $sce, IdeaService, ideas) {
   
-  var currentFeature = 0;
+ 
   $scope.ideasCtrl = {
     collection: ideas,
   };
-  $scope.featuredIdea = ideas.models[currentFeature];
+  //$scope.featuredIdea = ideas.models[currentFeature];
 
-  
+  $scope.currentIndex = 0;
+
+  $scope.setCurrentSlideIndex = function (index) {
+      $scope.currentIndex = index;
+  };
+
+  $scope.isCurrentSlideIndex = function (index) {
+      return $scope.currentIndex === index;
+  };
   $scope.nextFeature = function()
   {
-    if(currentFeature < ideas.length - 1)
+    if($scope.currentIndex < ideas.length - 1)
     {
-  	 currentFeature++;
+  	   $scope.currentIndex++;
     }
     else {
-      currentFeature = 0;
+        $scope.currentIndex = 0;
     }
-    $scope.featuredIdea = ideas.models[currentFeature];
+    //$scope.featuredIdea = ideas.models[currentFeature];
   };
 
 
