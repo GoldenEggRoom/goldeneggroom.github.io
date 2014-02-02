@@ -1,0 +1,63 @@
+html {
+    background-color: #FAF3E6; /* Serpia */
+}
+
+h1,
+h2 {
+    font-family: ActaDisplay-Book, Times;
+}
+
+.btn-primary {
+    color: #3F0632; /* Fusia Purple */
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 30px;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.logo-wrapper h1 {
+    font-size: 48px;
+}
+.ge-logo-splash {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+    margin-top: -10px;
+    vertical-align: center;
+}
+
+a:hover {
+    color: #EBB400;
+}
+
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 16px; }
+
+
+h3 { 
+    font-family: Futura, sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+p {
+    font-family: 'Georgia', 'Times', serif;
+    color: #444444;
+    font-size: 18px;
+    line-height: 1.55;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
